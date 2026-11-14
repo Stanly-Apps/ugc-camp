@@ -29,8 +29,8 @@ a{color:inherit}
 button,input,select{font:inherit;color:inherit}
 .wrap{max-width:1200px;margin:0 auto;padding:0 18px}
 @media(min-width:768px){.wrap{padding:0 32px}}
-.sec{padding:76px 0}
-@media(min-width:960px){.sec{padding:116px 0}}
+.sec{padding-top:76px;padding-bottom:76px}
+@media(min-width:960px){.sec{padding-top:116px;padding-bottom:116px}}
 
 /* type */
 .lbl{display:inline-block;font:500 13px/1.2 Onest,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
@@ -72,7 +72,7 @@ em{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:
 @media(min-width:900px){.nav-links{display:flex}}
 
 /* hero */
-.hero{padding:34px 0 0}
+.hero{padding:34px 0 0;overflow-x:clip}
 .hero-grid{display:grid;gap:28px;align-items:center}
 .hero-c{text-align:center}
 .meta{display:flex;justify-content:center;gap:34px;margin-bottom:26px}
@@ -716,12 +716,12 @@ document.documentElement.classList.add('js');
       return fail('Приём заявок подключается. Попробуй чуть позже.');
     }
     fetch(window.UGC.leadsUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)})
-      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(r){ if(r.status===429) throw new Error('429'); if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(){
         f.style.display = 'none'; document.getElementById('thanks').classList.add('on');
         if (window.fbq) fbq('track', 'Lead');
       })
-      .catch(function(){ btn.disabled = false; btn.style.opacity = 1; fail('Не получилось отправить. Проверь интернет и попробуй ещё раз.'); });
+      .catch(function(e){ btn.disabled = false; btn.style.opacity = 1; fail(e && e.message === '429' ? 'Заявки с этого устройства уже пришли — мы скоро свяжемся.' : 'Не получилось отправить. Проверь интернет и попробуй ещё раз.'); });
   });
 })();
 </script>
