@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UGC.camp — акселератор UGC-креаторов</title>
+<meta name="description" content="8 недель практики: снимаешь UGC для рекламы и tech UGC, собираешь портфолио и работаешь с реальными брифами брендов. Казахстан, Узбекистан, онлайн.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ugc.camp/">
+<meta property="og:title" content="UGC.camp — научись снимать UGC, за который платят бренды">
+<meta property="og:description" content="Акселератор UGC-креаторов: 8 недель практики, разбор каждого ролика, реальные брифы брендов. Казахстан, Узбекистан, онлайн.">
+<meta property="og:image" content="https://ugc.camp/img/og.jpg">
+<meta name="theme-color" content="#F4F1EC">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter+Tight:wght@600;700;800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F1EC; --paper:#FFFFFF; --ink:#131211; --ink2:#3B3834; --muted:#7A746C; --line:#E4DFD7;
+  --fire:#FF5A1F; --fire-d:#F04A10; --lilac:#DCD2FF; --butter:#FFE48A; --dark:#161412;
+  --r:24px; --shadow:0 18px 50px -24px rgba(19,18,17,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 Onest,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+.sec{padding:76px 0}
+@media(min-width:960px){.sec{padding:116px 0}}
+
+/* type */
+.lbl{display:inline-block;font:500 13px/1.2 Onest,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.lbl::before{content:"[\00a0"} .lbl::after{content:"\00a0]"}
+h1,h2,h3{font-family:"Inter Tight",sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.028em;line-height:.94}
+h2{font-size:clamp(36px,6.2vw,72px);max-width:15ch}
+h2.center{margin:0 auto;text-align:center}
+h3{font-size:clamp(21px,2.2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.02}
+em{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;text-transform:none;letter-spacing:-.01em;color:var(--fire);font-size:1.1em;line-height:.85}
+.sub{font-size:clamp(17px,1.5vw,19px);color:var(--ink2);max-width:58ch;margin-top:22px}
+.center-x{text-align:center}
+.center-x .sub{margin-left:auto;margin-right:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 30px;border-radius:999px;background:var(--fire);color:var(--ink);font:700 16px/1 Onest,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .15s ease,background .15s ease,box-shadow .15s ease;box-shadow:0 10px 30px -12px rgba(255,90,31,.8)}
+.btn:hover{background:var(--fire-d);transform:translateY(-2px)}
+.btn .arr{transition:transform .15s}
+.btn:hover .arr{transform:translateX(3px)}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.dark{background:var(--ink);color:#fff;box-shadow:none}
+.btn.dark:hover{background:#000}
+:focus-visible{outline:3px solid var(--fire);outline-offset:3px}
+
+/* stickers */
+.stk{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:9px 15px;border-radius:999px;font:700 14px/1 Onest,sans-serif;background:var(--butter);color:var(--ink);box-shadow:0 10px 24px -10px rgba(19,18,17,.45);white-space:nowrap}
+.stk.lilac{background:var(--lilac)} .stk.fire{background:var(--fire)} .stk.ink{background:var(--ink);color:#fff}
+.stk .dot{width:8px;height:8px;border-radius:50%;background:var(--fire)}
+
+/* nav */
+.nav{position:sticky;top:10px;z-index:60;padding:0 10px}
+.nav-in{max-width:1180px;margin:10px auto 0;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border:1px solid rgba(19,18,17,.06);border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 12px 34px -22px rgba(19,18,17,.45)}
+.logo{font:800 21px/1 "Inter Tight",sans-serif;letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+.logo i{font:italic 600 24px/1 "Cormorant Garamond",serif;color:var(--fire);letter-spacing:0}
+.nav-links{display:none;gap:28px;font-size:15px;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--ink2)}
+.nav-links a:hover{color:var(--ink)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:14px;box-shadow:none}
+@media(min-width:900px){.nav-links{display:flex}}
+
+/* hero */
+.hero{padding:34px 0 0}
+.hero-grid{display:grid;gap:28px;align-items:center}
+.hero-c{text-align:center}
+.meta{display:flex;justify-content:center;gap:34px;margin-bottom:26px}
+.meta div{display:flex;flex-direction:column;gap:4px}
+.meta small{font:500 12px/1 Onest;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.meta b{font:italic 600 22px/1 "Cormorant Garamond",serif;color:var(--ink)}
+.hero h1{font-size:clamp(42px,7.2vw,80px);margin:0 auto;max-width:12ch}
+.hero .sub{margin:24px auto 0;text-align:center}
+.cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px}
+.geo{margin-top:18px;font-size:14px;color:var(--muted)}
+.ph{position:relative;margin:0}
+.ph img{width:100%;height:100%;object-fit:cover;border-radius:28px;box-shadow:var(--shadow)}
+.hero-photos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;align-items:end;margin-top:6px}
+.hero-photos .ph{aspect-ratio:3/4.4}
+.hero-photos .ph:nth-child(1){transform:rotate(-4deg) translateY(10px)}
+.hero-photos .ph:nth-child(3){transform:rotate(4deg) translateY(10px)}
+.hero-photos .ph:nth-child(2){aspect-ratio:3/4.9}
+.hero-photos .stk{font-size:12px;padding:7px 11px}
+.side{display:none}
+@media(min-width:1000px){
+  .hero{padding-top:48px}
+  .hero-grid{grid-template-columns:1fr minmax(560px,1.55fr) 1fr;gap:34px}
+  .side{display:block;aspect-ratio:3/4.3}
+  .side.l{transform:rotate(-3.5deg)}
+  .side.r{transform:rotate(3.5deg) translateY(30px)}
+  .hero-photos{display:none}
+}
+.facts{display:grid;grid-template-columns:1fr 1fr;margin-top:46px;background:var(--paper);border-radius:var(--r);border:1px solid var(--line);overflow:hidden}
+.facts div{padding:20px 18px;border-top:1px solid var(--line)}
+.facts div:nth-child(-n+2){border-top:0}
+.facts div:nth-child(odd){border-right:1px solid var(--line)}
+.facts b{display:block;font:800 clamp(22px,2.6vw,30px)/1 "Inter Tight",sans-serif;letter-spacing:-.02em;text-transform:uppercase}
+.facts span{display:block;margin-top:7px;font-size:14px;color:var(--muted);line-height:1.35}
+@media(min-width:900px){
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .facts div{border-top:0!important;border-right:1px solid var(--line)}
+  .facts div:last-child{border-right:0}
+  .facts div{padding:26px 26px}
+}
+
+/* ticker */
+.ticker{margin-top:70px;background:var(--fire);color:var(--ink);overflow:hidden;transform:rotate(-1.2deg);box-shadow:0 0 0 1px var(--fire)}
+.tk{display:flex;width:max-content;animation:tk 34s linear infinite}
+.tk span{font:800 clamp(20px,2.4vw,28px)/1 "Inter Tight",sans-serif;text-transform:uppercase;letter-spacing:-.01em;padding:18px 0;white-space:nowrap}
+.tk i{font-style:normal;padding:0 22px;opacity:.75}
+@keyframes tk{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.tk{animation:none}}
+
+/* what is ugc */
+.two{display:grid;gap:44px;align-items:center}
+@media(min-width:960px){.two{grid-template-columns:1.1fr .9fr;gap:70px}}
+.steps3{margin-top:36px;display:grid;gap:12px}
+.row{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px 22px}
+.row .n{font:600 13px/1.6 Onest;color:var(--muted);white-space:nowrap}
+.row p{color:var(--ink2)}
+.row b{color:var(--ink)}
+.adcard{position:relative;max-width:420px;margin:0 auto;width:100%}
+.adcard .shot{border-radius:30px;overflow:hidden;box-shadow:var(--shadow);background:#000;aspect-ratio:9/14}
+.adcard .shot img{width:100%;height:100%;object-fit:cover}
+.adcard .top{position:absolute;left:16px;right:16px;top:16px;display:flex;align-items:center;gap:10px;color:#fff;font-size:13px;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.adcard .av{width:30px;height:30px;border-radius:50%;background:var(--butter);display:grid;place-items:center;color:var(--ink);font:800 12px/1 "Inter Tight";text-shadow:none}
+.adcard .top small{display:block;opacity:.85;font-size:11px}
+.adcard .bar{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(255,255,255,.94);border-radius:16px;padding:13px 16px;display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600}
+.adcard .bar span{color:var(--fire)}
+.adcard .stk.a{top:22%;left:-18px;transform:rotate(-6deg)}
+.adcard .stk.b{top:48%;right:-14px;transform:rotate(5deg)}
+
+/* formats gallery: бегущая лента */
+.gal-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:64px}
+.gal-h .lbl{margin:0}
+.gal{margin-top:20px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.gal-track{display:flex;gap:12px;width:max-content;animation:gal 60s linear infinite}
+.gal:hover .gal-track{animation-play-state:paused}
+@keyframes gal{to{transform:translateX(calc(-50% - 6px))}}
+@media(prefers-reduced-motion:reduce){.gal{overflow-x:auto}.gal-track{animation:none}}
+.fmt{position:relative;flex:none;width:clamp(150px,17vw,224px);aspect-ratio:9/15;border-radius:22px;overflow:hidden;background:#ddd;margin:0}
+.fmt img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.fmt:hover img{transform:scale(1.04)}
+.fmt b{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.95);border-radius:999px;padding:8px 13px;font:700 13px/1 Onest;color:var(--ink)}
+.fmt .tag{position:absolute;right:10px;top:10px;background:var(--fire);border-radius:999px;padding:6px 10px;font:700 11px/1 Onest;color:var(--ink)}
+
+/* who */
+.who-grid{margin-top:48px;display:grid;gap:16px}
+@media(min-width:860px){.who-grid{grid-template-columns:1fr 1fr;gap:20px}}
+.who{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:28px 26px 24px;display:flex;flex-direction:column;gap:14px}
+.who .n{font:600 13px/1 Onest;color:var(--muted)}
+.who p{color:var(--ink2)}
+.res{margin-top:auto;border-radius:18px;padding:16px 18px;font-weight:500;line-height:1.45}
+.res small{display:block;font:italic 600 21px/1.1 "Cormorant Garamond",serif;margin-bottom:6px}
+.res.ink{background:var(--ink);color:#fff} .res.fire{background:var(--fire)} .res.lilac{background:var(--lilac)} .res.butter{background:var(--butter)}
+
+/* dark band */
+.dark{background:var(--dark);color:#F4F1EC;border-radius:36px;margin:0 10px;overflow:hidden}
+@media(min-width:768px){.dark{margin:0 20px}}
+.dark .lbl{color:#A8A198}
+.dark em{color:var(--fire)}
+.dark-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:960px){.dark-grid{grid-template-columns:1.25fr .75fr;gap:60px}}
+.diff{margin-top:40px;display:grid;gap:12px}
+@media(min-width:700px){.diff{grid-template-columns:1fr 1fr}}
+.diff div{border:1px solid rgba(244,241,236,.14);border-radius:22px;padding:22px}
+.diff .n{font:600 13px/1 Onest;color:var(--fire)}
+.diff h3{margin:12px 0 10px;font-size:20px}
+.diff p{color:#C9C2B8;font-size:16px}
+.ringph{border-radius:28px;overflow:hidden;aspect-ratio:3/4;position:relative}
+.ringph img{width:100%;height:100%;object-fit:cover}
+.ringph .stk{left:18px;bottom:18px}
+
+/* program */
+.prog{display:grid;gap:22px;margin-top:48px}
+@media(min-width:960px){.prog{grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}}
+.prog-card{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:30px 28px;position:relative;overflow:hidden}
+@media(min-width:960px){.prog-card{position:sticky;top:96px}}
+.prog-card h3{font-size:clamp(30px,3.6vw,44px);line-height:.95}
+.pills{display:flex;align-items:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
+.pill{background:var(--butter);border-radius:999px;padding:9px 14px;font:700 14px/1 Onest}
+.pill.l{background:var(--lilac)}
+.stairs{display:flex;align-items:flex-end;gap:7px;height:150px;margin:26px 0 26px}
+.stairs span{flex:1;border-radius:10px 10px 4px 4px;background:var(--bg);border:1px solid var(--line);position:relative}
+.stairs span b{position:absolute;top:8px;left:0;right:0;text-align:center;font:700 12px/1 Onest;color:var(--muted)}
+.stairs span.f{background:var(--fire);border-color:var(--fire)} .stairs span.f b{color:var(--ink)}
+.prog-card p{color:var(--ink2);font-size:16px;margin-bottom:22px}
+.acc{display:grid;gap:10px}
+.acc details{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:20px 20px 20px 24px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .wk{font:600 13px/1 Onest;color:var(--muted);min-width:22px}
+.acc summary h3{flex:1;font-size:clamp(18px,2vw,22px)}
+.acc summary .ic{flex:none;width:42px;height:42px;border-radius:12px;background:var(--butter);display:grid;place-items:center;transition:transform .2s,background .2s}
+.acc details[open] .ic{transform:rotate(90deg);background:var(--fire)}
+.acc .body{padding:0 24px 22px 62px;color:var(--ink2)}
+.acc .body ul{list-style:none;display:grid;gap:7px}
+.acc .body li{position:relative;padding-left:20px}
+.acc .body li::before{content:"✦";position:absolute;left:0;top:0;color:var(--fire);font-size:13px}
+.acc .task{margin-top:14px;background:var(--bg);border-radius:14px;padding:12px 14px;font-size:15px}
+.acc .task b{font-weight:700;color:var(--ink)}
+@media(max-width:560px){.acc .body{padding:0 20px 20px 20px}}
+
+/* brands steps */
+.bsteps{margin-top:48px;display:grid;gap:16px}
+@media(min-width:900px){.bsteps{grid-template-columns:repeat(3,1fr);gap:20px}}
+.bs{background:var(--paper);border:1px solid var(--line);border-radius:28px;overflow:hidden;display:flex;flex-direction:column}
+.bs .im{aspect-ratio:4/3;overflow:hidden;position:relative}
+.bs .im img{width:100%;height:100%;object-fit:cover}
+.bs .im .stk{left:14px;top:14px}
+.bs .tx{padding:22px 24px 26px}
+.bs .tx small{font:600 13px/1 Onest;color:var(--muted)}
+.bs h3{margin:10px 0 10px}
+.bs p{color:var(--ink2);font-size:16px}
+
+/* included */
+.inc{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(min-width:900px){.inc{grid-template-columns:repeat(4,1fr);gap:16px}}
+.inc div{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px 20px;display:flex;flex-direction:column;gap:14px;min-height:170px}
+.inc svg{width:40px;height:40px;padding:9px;border-radius:12px;background:var(--bg);stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.inc div:nth-child(3n+1) svg{background:var(--butter)} .inc div:nth-child(3n+2) svg{background:var(--lilac)} .inc div:nth-child(3n) svg{background:#FFD2C0}
+.inc b{font:700 17px/1.25 Onest}
+.inc span{font-size:14.5px;color:var(--muted);line-height:1.4;margin-top:-6px}
+
+/* result */
+.checks{list-style:none;display:grid;gap:12px;margin-top:34px}
+.checks li{display:flex;gap:14px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px 18px;font-weight:500}
+.checks li::before{content:"";flex:none;width:24px;height:24px;border-radius:50%;background:var(--fire) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 12.5l3.2 3L17 9' fill='none' stroke='%23131211' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/18px no-repeat}
+.resph{position:relative;max-width:440px;margin:0 auto;width:100%}
+.resph .ph{aspect-ratio:3/4}
+.resph .stk.a{top:10%;right:-12px;transform:rotate(5deg)}
+.resph .stk.b{bottom:12%;left:-14px;transform:rotate(-5deg)}
+.guar{margin-top:56px;background:var(--butter);border-radius:30px;padding:30px 28px;display:grid;gap:18px}
+@media(min-width:900px){.guar{grid-template-columns:auto 1fr;gap:40px;align-items:center;padding:40px 44px}}
+.guar .t{font:italic 600 clamp(34px,4vw,48px)/.95 "Cormorant Garamond",serif}
+.guar p{font-size:clamp(17px,1.6vw,20px);font-weight:500;line-height:1.45}
+.guar small{display:block;margin-top:10px;font-size:14px;color:#5b5440;font-weight:400}
+
+/* team */
+.team{display:grid;gap:22px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:30px 28px}
+@media(min-width:900px){.team{grid-template-columns:1fr 1fr;padding:46px 48px;gap:50px}}
+.team p{color:var(--ink2)}
+.team p+p{margin-top:12px}
+
+/* price */
+.price{margin-top:48px;background:var(--dark);color:#F4F1EC;border-radius:34px;padding:34px 26px;display:grid;gap:30px;position:relative;overflow:hidden}
+@media(min-width:900px){.price{grid-template-columns:1fr 1fr;padding:54px 56px;gap:56px}}
+.price .lbl{color:#A8A198;margin-bottom:12px}
+.price h3{font-size:clamp(30px,3.6vw,44px)}
+.price .amt{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-top:26px}
+.price .amt b{font:800 clamp(64px,8vw,104px)/.9 "Inter Tight",sans-serif;letter-spacing:-.04em;color:var(--fire)}
+.price .loc{display:flex;flex-direction:column;gap:6px;font-size:16px;color:#DCD5CB}
+.price .note{margin-top:20px;font-size:15px;color:#B4ADA3;max-width:42ch}
+.price .btn{margin-top:28px;width:100%}
+@media(min-width:900px){.price .btn{width:auto}}
+.price ul{list-style:none;display:grid;gap:12px;align-content:start}
+.price li{display:flex;gap:12px;align-items:flex-start;padding-bottom:12px;border-bottom:1px solid rgba(244,241,236,.12);font-size:16px}
+.price li:last-child{border-bottom:0}
+.price li::before{content:"✦";color:var(--fire);flex:none}
+
+/* how to join */
+.join{margin-top:48px;display:grid;gap:14px}
+@media(min-width:860px){.join{grid-template-columns:repeat(3,1fr);gap:18px}}
+.join div{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:26px 24px}
+.join .n{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font:800 18px/1 "Inter Tight";background:var(--butter);margin-bottom:18px}
+.join div:nth-child(2) .n{background:var(--lilac)} .join div:nth-child(3) .n{background:var(--fire)}
+.join p{color:var(--ink2);margin-top:8px;font-size:16px}
+
+/* faq */
+.faq{margin-top:44px;display:grid;gap:10px;max-width:880px}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:20px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:20px 22px;font:600 17px/1.35 Onest}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:34px;height:34px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font:500 22px/1 Onest;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--butter)}
+.faq .a{padding:0 22px 22px;color:var(--ink2)}
+
+/* apply */
+.apply{background:var(--fire);border-radius:36px;margin:0 10px;overflow:hidden}
+@media(min-width:768px){.apply{margin:0 20px}}
+.apply .lbl{color:rgba(19,18,17,.65)}
+.apply em{color:#fff}
+.apply-grid{display:grid;gap:34px;align-items:start}
+@media(min-width:960px){.apply-grid{grid-template-columns:.95fr 1.05fr;gap:56px}}
+.apply .sub{color:rgba(19,18,17,.82)}
+.apply .mini{display:none;margin-top:34px;max-width:300px;aspect-ratio:3/4;transform:rotate(-3deg)}
+@media(min-width:960px){.apply .mini{display:block}}
+form{background:var(--paper);border-radius:28px;padding:26px 22px;box-shadow:0 30px 60px -30px rgba(19,18,17,.5)}
+@media(min-width:600px){form{padding:34px 32px}}
+.f{display:grid;gap:7px;margin-bottom:16px}
+.f label,.f .q{font:600 14px/1.2 Onest}
+.f input,.f select{width:100%;min-height:54px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);padding:0 16px;font-size:16px;transition:border-color .15s,background .15s;appearance:none;-webkit-appearance:none}
+.f select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23131211' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px}
+.f input:focus,.f select:focus{outline:none;border-color:var(--ink);background:#fff}
+.f .opt{font-weight:400;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:12px 15px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);font:500 14px/1 Onest;transition:all .15s}
+.chips input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips input:focus-visible+span{outline:3px solid var(--fire);outline-offset:2px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.45;margin:6px 0 20px;cursor:pointer}
+.consent input{flex:none;width:20px;height:20px;margin-top:1px;accent-color:var(--ink)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+form .btn{width:100%}
+.err{display:none;color:#B42318;font-size:14px;margin-top:12px}
+.err.on{display:block}
+.thanks{display:none;text-align:center;padding:30px 10px}
+.thanks.on{display:block}
+.thanks .big{font:800 34px/1 "Inter Tight";text-transform:uppercase;letter-spacing:-.02em}
+.thanks p{color:var(--ink2);margin-top:14px}
+
+/* footer */
+footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
+@media(min-width:900px){footer{padding-bottom:56px}}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+.foot a{text-decoration:none}
+
+/* mobile sticky cta */
+.mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:70;transform:translateY(140%);transition:transform .3s ease}
+.mcta.on{transform:none}
+.mcta .btn{width:100%;box-shadow:0 14px 34px -12px rgba(19,18,17,.55)}
+@media(min-width:900px){.mcta{display:none}}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Главное меню">
+  <div class="nav-in">
+    <a class="logo" href="#top" aria-label="UGC.camp — наверх">UGC<i>.camp</i></a>
+    <div class="nav-links">
+      <a href="#who">Кому подходит</a>
+      <a href="#program">Программа</a>
+      <a href="#brands">Бренды</a>
+      <a href="#price">Стоимость</a>
+      <a href="#faq">Вопросы</a>
+    </div>
+    <a class="btn dark" href="#apply">Оставить заявку</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <figure class="ph side l"><img src="img/hero-a.jpg" alt="Девушка снимает на телефон ролик о готовке" fetchpriority="high"><span class="stk" style="top:16%;right:-16px;transform:rotate(6deg)">tech UGC</span></figure>
+    <div class="hero-c">
+      <div class="meta">
+        <div><small>Формат</small><b>онлайн + практика</b></div>
+        <div><small>Длительность</small><b>8 недель</b></div>
+      </div>
+      <h1>Научись снимать UGC, <em>за&nbsp;который платят бренды</em></h1>
+      <p class="sub">Акселератор для UGC-креаторов: снимаешь ролики для рекламы и tech UGC, собираешь портфолио и работаешь с реальными брифами брендов. Блог и подписчики не нужны — нужен телефон.</p>
+      <div class="cta">
+        <a class="btn" href="#apply">Забронировать место <span class="arr">→</span></a>
+        <a class="btn ghost" href="#program">Смотреть программу</a>
+      </div>
+      <p class="geo">Казахстан · Узбекистан · Кыргызстан — онлайн, на русском языке</p>
+    </div>
+    <figure class="ph side r"><img src="img/hero-b.jpg" alt="Девушка снимает видео-отзыв на телефон"><span class="stk lilac" style="bottom:14%;left:-20px;transform:rotate(-5deg)">реальные брифы</span></figure>
+    <div class="hero-photos" aria-hidden="true">
+      <figure class="ph"><img src="img/hero-a.jpg" alt=""><span class="stk" style="top:10px;left:8px">tech UGC</span></figure>
+      <figure class="ph"><img src="img/hero-c.jpg" alt=""><span class="stk ink" style="top:10px;left:50%;transform:translateX(-50%)"><span class="dot"></span>REC</span></figure>
+      <figure class="ph"><img src="img/hero-b.jpg" alt=""><span class="stk lilac" style="bottom:10px;right:8px">брифы</span></figure>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="facts rv">
+      <div><b>8 недель</b><span>живые созвоны и задание каждую неделю</span></div>
+      <div><b>Каждый ролик</b><span>с разбором: хук, кадр, звук, текст</span></div>
+      <div><b>Реальные брифы</b><span>от брендов-партнёров во время потока</span></div>
+      <div><b>$999</b><span>≈ 447 000 ₸ · ≈ 11,8 млн сум, можно частями</span></div>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="tk">
+      <span>UGC для рекламы</span><i>✦</i><span>tech UGC</span><i>✦</i><span>хук за 1,5 секунды</span><i>✦</i><span>портфолио</span><i>✦</i><span>брифы брендов</span><i>✦</i><span>прайс в ₸ и сумах</span><i>✦</i><span>AI-монтаж</span><i>✦</i>
+      <span>UGC для рекламы</span><i>✦</i><span>tech UGC</span><i>✦</i><span>хук за 1,5 секунды</span><i>✦</i><span>портфолио</span><i>✦</i><span>брифы брендов</span><i>✦</i><span>прайс в ₸ и сумах</span><i>✦</i><span>AI-монтаж</span><i>✦</i>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="sec" id="ugc">
+  <div class="wrap two">
+    <div class="rv">
+      <span class="lbl">Что такое UGC</span>
+      <h2>Бренды платят <em>не&nbsp;за&nbsp;подписчиков,</em> а за ролики, которые продают</h2>
+      <div class="steps3">
+        <div class="row"><span class="n">[ 01 ]</span><p><b>Бренду нужны ролики для рекламы</b> в Instagram и TikTok: живые, от первого лица, как будто снял обычный человек.</p></div>
+        <div class="row"><span class="n">[ 02 ]</span><p><b>Ты снимаешь их на телефон по брифу:</b> распаковка, обзор, «до и после», демо приложения, рецепт.</p></div>
+        <div class="row"><span class="n">[ 03 ]</span><p><b>Бренд запускает ролик в рекламу со своего аккаунта.</b> Твой блог не нужен: платят за ролик, а не за охваты.</p></div>
+      </div>
+    </div>
+    <div class="adcard rv">
+      <div class="shot"><img src="img/f-review.jpg" alt="Креатор снимает обзор продукта на телефон" loading="lazy"></div>
+      <div class="top"><span class="av">B</span><div>brand.kz<small>Реклама</small></div></div>
+      <div class="bar">Подробнее <span>→</span></div>
+      <span class="stk a">снято на телефон</span>
+      <span class="stk lilac b">крутится в рекламе</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="gal-h rv"><span class="lbl">Форматы, которые ты освоишь</span></div>
+    <div class="gal" role="list" aria-label="Форматы UGC"><div class="gal-track">
+      <figure class="fmt" role="listitem"><img src="img/f-unbox.jpg" alt="Распаковка смартфона" loading="lazy"><span class="tag">tech</span><b>Распаковка</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-skin.jpg" alt="Девушка наносит крем" loading="lazy"><b>До и после</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-app.jpg" alt="Съёмка на телефон со стабилизатором" loading="lazy"><span class="tag">tech</span><b>Демо приложения</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-grwm.jpg" alt="Девушка в халате с телефоном" loading="lazy"><b>Утренний уход</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-recipe.jpg" alt="Съёмка рецепта на кухне" loading="lazy"><b>Рецепт</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-trend.jpg" alt="Девушка снимает тренд с кольцевой лампой" loading="lazy"><b>Тренд</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-talk.jpg" alt="Портрет девушки" loading="lazy"><b>Говорящая голова</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/hero-c.jpg" alt="Девушка снимает видео в студии" loading="lazy"><b>Отзыв</b></figure>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="who" style="padding-top:0">
+  <div class="wrap">
+    <div class="center-x rv">
+      <span class="lbl">Кому подходит</span>
+      <h2 class="center">UGC.camp для тебя, <em>если…</em></h2>
+    </div>
+    <div class="who-grid">
+      <article class="who rv"><span class="n">[ 01 ]</span><h3>Ты только начинаешь</h3><p>Давно смотришь на UGC, но не понимаешь, с чего начать, что снимать и кому это продавать.</p><div class="res ink"><small>Результат для тебя</small>Первые ролики по брифам, портфолио и понятный план, где искать заказы.</div></article>
+      <article class="who rv"><span class="n">[ 02 ]</span><h3>Снимаешь за бартер</h3><p>Уже делаешь распаковки и обзоры, но бренды платят продуктом, а не деньгами.</p><div class="res fire"><small>Результат для тебя</small>Прайс в тенге или сумах, разговор с брендом о деньгах и правах на ролик, первые оплачиваемые брифы.</div></article>
+      <article class="who rv"><span class="n">[ 03 ]</span><h3>Ведёшь блог или SMM</h3><p>Умеешь делать контент и хочешь отдельный источник дохода, который не зависит от охватов.</p><div class="res lilac"><small>Результат для тебя</small>UGC как услуга: хуки, сценарии для рекламы, tech UGC и понятный процесс сдачи ролика бренду.</div></article>
+      <article class="who rv"><span class="n">[ 04 ]</span><h3>Хочешь работать из дома</h3><p>Учёба, декрет или основная работа: нужен гибкий график и задачи, которые можно делать с телефона.</p><div class="res butter"><small>Результат для тебя</small>Профессия в своём графике: от брифа до готового ролика — всё на телефон.</div></article>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="diff">
+  <div class="wrap sec dark-grid">
+    <div class="rv">
+      <span class="lbl">Чем мы отличаемся</span>
+      <h2>Это не курс в записи. <em>Это 8 недель практики</em></h2>
+      <div class="diff">
+        <div><span class="n">01</span><h3>Учат те, кто покупает UGC</h3><p>Мы каждый день запускаем рекламу на UGC-роликах и видим цифры: какие хуки держат, какие ролики окупаются. Этому и учим.</p></div>
+        <div><span class="n">02</span><h3>Реальные брифы, а не только домашки</h3><p>Во второй половине программы снимаешь задания от брендов-партнёров. Лучшие ролики бренды берут в работу и оплачивают.</p></div>
+        <div><span class="n">03</span><h3>Tech UGC</h3><p>Ролики для приложений и онлайн-сервисов: запись экрана, демо функций, AI. Здесь чек выше, а креаторов мало.</p></div>
+        <div><span class="n">04</span><h3>Разбор каждого ролика</h3><p>Не «молодец, хорошо», а конкретно: хук, кадр, звук, текст и что переснять.</p></div>
+      </div>
+    </div>
+    <div class="ringph rv"><img src="img/ring.jpg" alt="Рука на фоне кольцевой лампы" loading="lazy"><span class="stk fire">не нужен блог</span></div>
+  </div>
+</section>
+
+<section class="sec" id="program">
+  <div class="wrap">
+    <div class="rv">
+      <span class="lbl">Программа</span>
+      <h2>8 недель — <em>от первого ролика</em> до брифов брендов</h2>
+    </div>
+    <div class="prog">
+      <div class="prog-card rv">
+        <h3>8 недель<br>8 шагов</h3>
+        <div class="pills"><span class="pill">созвон каждую неделю</span><span class="pill l">задание недели</span></div>
+        <div class="stairs" aria-hidden="true">
+          <span style="height:26%"><b>1</b></span><span style="height:35%"><b>2</b></span><span style="height:44%"><b>3</b></span><span style="height:53%"><b>4</b></span><span style="height:62%"><b>5</b></span><span class="f" style="height:72%"><b>6</b></span><span class="f" style="height:84%"><b>7</b></span><span class="f" style="height:100%"><b>8</b></span>
+        </div>
+        <p>Каждая неделя: живой созвон с разбором, задание и обратная связь по каждому ролику. С 6-й недели — реальные брифы брендов.</p>
+        <a class="btn" href="#apply" style="width:100%">Хочу в поток <span class="arr">→</span></a>
+      </div>
+      <div class="acc">
+        <details class="rv" open><summary><span class="wk">01</span><h3>База UGC</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Что такое UGC и чем он отличается от блогинга</li><li>Какие ролики покупают бренды в Казахстане и Узбекистане</li><li>Выбор ниши и позиционирование креатора</li></ul><div class="task"><b>Задание:</b> разобрать 10 рекламных UGC-роликов и выбрать свою нишу.</div></div></details>
+        <details class="rv"><summary><span class="wk">02</span><h3>Съёмка на телефон</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Свет, звук и кадр дома, без студии</li><li>Ракурсы, крупные планы, перебивки</li><li>Как снимать руки, продукт и себя в кадре</li></ul><div class="task"><b>Задание:</b> первый ролик-распаковка.</div></div></details>
+        <details class="rv"><summary><span class="wk">03</span><h3>Сценарий и хук</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Первые 1,5 секунды: хуки, которые останавливают ленту</li><li>Структура рекламного ролика</li><li>Как писать сценарий по брифу бренда</li></ul><div class="task"><b>Задание:</b> 3 версии хука для одного ролика.</div></div></details>
+        <details class="rv"><summary><span class="wk">04</span><h3>Монтаж и AI</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>CapCut: темп, субтитры, звук</li><li>AI-инструменты для монтажа, озвучки и идей</li><li>Экспорт под Reels и TikTok</li></ul><div class="task"><b>Задание:</b> смонтировать ролик с субтитрами.</div></div></details>
+        <details class="rv"><summary><span class="wk">05</span><h3>Tech UGC</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Ролики для приложений и онлайн-сервисов</li><li>Запись экрана и демо функций</li><li>Как показать продукт, который нельзя потрогать</li></ul><div class="task"><b>Задание:</b> ролик для мобильного приложения.</div></div></details>
+        <details class="rv"><summary><span class="wk">06</span><h3>Реклама и цифры</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Как бренд оценивает ролик: досмотры, клики, стоимость установки</li><li>Версии ролика и тесты</li><li>Права на использование ролика в рекламе</li></ul><div class="task"><b>Задание:</b> первый реальный бриф бренда.</div></div></details>
+        <details class="rv"><summary><span class="wk">07</span><h3>Портфолио и прайс</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Портфолио, которое бренды открывают и досматривают</li><li>Прайс в тенге и сумах, пакеты роликов</li><li>Договор, налоги и приём оплаты в KZ и UZ</li></ul><div class="task"><b>Задание:</b> портфолио и прайс-лист.</div></div></details>
+        <details class="rv"><summary><span class="wk">08</span><h3>Выход на бренды</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Где искать заказы: бренды, платформы, агентства</li><li>Отклики и письма брендам, которые читают</li><li>Как из одного ролика вырасти в постоянную работу</li></ul><div class="task"><b>Задание:</b> отклики брендам и выпускной разбор портфолио.</div></div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="brands" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <span class="lbl">Работа с брендами</span>
+      <h2>Как ты <em>выходишь на бренды</em></h2>
+      <p class="sub">Обучение и работа идут вместе: сначала учебные брифы, потом настоящие задания от брендов, после выпуска — каталог креаторов.</p>
+    </div>
+    <div class="bsteps">
+      <article class="bs rv"><div class="im"><img src="img/step-1.jpg" alt="Девушка настраивает штатив с телефоном" loading="lazy"><span class="stk">недели 1–5</span></div><div class="tx"><small>[ 01 ]</small><h3>Учебные брифы</h3><p>Снимаешь по ТЗ, как для настоящего клиента, и получаешь разбор каждого ролика.</p></div></article>
+      <article class="bs rv"><div class="im"><img src="img/step-2.jpg" alt="Девушка снимает себя на телефон в комнате" loading="lazy"><span class="stk lilac">недели 6–8</span></div><div class="tx"><small>[ 02 ]</small><h3>Реальные брифы</h3><p>Задания от брендов-партнёров: приложения, онлайн-сервисы, локальные бренды Казахстана и Узбекистана.</p></div></article>
+      <article class="bs rv"><div class="im"><img src="img/step-3.jpg" alt="Девушка работает за ноутбуком" loading="lazy"><span class="stk fire">после выпуска</span></div><div class="tx"><small>[ 03 ]</small><h3>Каталог креаторов</h3><p>Портфолио выпускников попадает в каталог, который видят бренды. В чате выпускников появляются новые брифы.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="included" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <span class="lbl">Что входит</span>
+      <h2>Всё, что нужно <em>UGC-креатору</em></h2>
+    </div>
+    <div class="inc">
+      <div class="rv"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg><b>Живые созвоны</b><span>Каждую неделю, с записями</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></svg><b>Разбор каждого ролика</b><span>Хук, кадр, звук, текст</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><b>Реальные брифы</b><span>От брендов-партнёров</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><b>Чат потока и кураторы</b><span>Вопросы — в любой день</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 13h8M8 17h6"/></svg><b>Шаблоны</b><span>Хуки, сценарии, письма брендам</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.6L18 9l-4.2 1.6L12 15l-1.8-4.4L6 9l4.2-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg><b>AI-модуль</b><span>Монтаж, озвучка, идеи</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9 9.5c0-1.4 1.3-2 3-2s3 .7 3 2-1.3 1.8-3 2.2-3 1-3 2.3 1.3 2 3 2 3-.6 3-2M12 5.5v2M12 16.5v2"/></svg><b>Прайс и договор</b><span>Ставки, налоги, оплата в KZ и UZ</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><b>Каталог креаторов</b><span>Бренды видят твоё портфолио</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="result" style="padding-top:0">
+  <div class="wrap two">
+    <div class="rv">
+      <span class="lbl">Результат</span>
+      <h2>Через 8 недель <em>у тебя будет</em></h2>
+      <ul class="checks">
+        <li>8+ роликов в портфолио: распаковки, обзоры, tech UGC</li>
+        <li>Страница-портфолио и прайс в тенге или сумах</li>
+        <li>Опыт работы по реальным брифам брендов</li>
+        <li>Система: где искать заказы и как откликаться</li>
+        <li>Место в каталоге креаторов UGC.camp</li>
+      </ul>
+    </div>
+    <div class="resph rv">
+      <figure class="ph"><img src="img/result.jpg" alt="Креатор снимает ролик об уходе за кожей" loading="lazy"></figure>
+      <span class="stk a">8+ роликов</span>
+      <span class="stk lilac b">портфолио готово</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="guar rv">
+      <div class="t">Честная<br>гарантия</div>
+      <div>
+        <p>Сдаёшь все задания вовремя, а за 60 дней после выпуска у тебя нет ни одного оплачиваемого брифа — проходишь следующий поток бесплатно.</p>
+        <small>Точные условия — в договоре-оферте. Доход мы не обещаем: он зависит от тебя и от брендов. Мы обещаем практику, разборы и доступ к брифам.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="team rv">
+      <div>
+        <span class="lbl">Кто за этим стоит</span>
+        <h2 style="font-size:clamp(32px,4.4vw,54px)">Команда, которая <em>сама покупает UGC</em></h2>
+      </div>
+      <div>
+        <p>Мы каждый день запускаем рекламу на UGC-роликах на рынках США, Европы и СНГ и видим, какие ролики окупаются, а какие — нет.</p>
+        <p>В UGC.camp мы учим тому, что работает в рекламе сейчас, и приводим брендов-партнёров, которым нужны креаторы. Наставников и спикеров потока представим перед стартом.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="price" style="padding-top:0">
+  <div class="wrap">
+    <div class="center-x rv">
+      <span class="lbl">Стоимость</span>
+      <h2 class="center">Участие <em>в потоке</em></h2>
+    </div>
+    <div class="price rv">
+      <div>
+        <span class="lbl">Поток · 8 недель · онлайн</span>
+        <h3>UGC.camp</h3>
+        <div class="amt"><b>$999</b><div class="loc"><span>≈ 447 000 ₸</span><span>≈ 11,8 млн сум</span></div></div>
+        <p class="note">Можно оплатить частями — варианты подберём на созвоне. Группа небольшая: мы разбираем каждый ролик.</p>
+        <a class="btn" href="#apply">Забронировать место <span class="arr">→</span></a>
+      </div>
+      <ul>
+        <li>8 недель программы и живые созвоны каждую неделю</li>
+        <li>Разбор каждого ролика</li>
+        <li>Реальные брифы брендов-партнёров</li>
+        <li>Чат потока и кураторы</li>
+        <li>Шаблоны хуков, сценариев и писем брендам</li>
+        <li>AI-модуль: монтаж, озвучка, идеи</li>
+        <li>Прайс, договор и налоги в KZ и UZ</li>
+        <li>Каталог креаторов и чат выпускников</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="join" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <span class="lbl">Как попасть</span>
+      <h2>Три шага <em>до старта</em></h2>
+    </div>
+    <div class="join">
+      <div class="rv"><span class="n">1</span><h3>Заявка</h3><p>Одна минута: имя, контакт, страна и твой опыт в UGC.</p></div>
+      <div class="rv"><span class="n">2</span><h3>Созвон 15 минут</h3><p>Расскажем о потоке, ответим на вопросы и вместе поймём, подходит ли тебе программа.</p></div>
+      <div class="rv"><span class="n">3</span><h3>Бронь и старт</h3><p>Фиксируешь место, получаешь доступ в чат потока и первые материалы.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <span class="lbl">Вопросы</span>
+      <h2>Частые <em>вопросы</em></h2>
+    </div>
+    <div class="faq">
+      <details><summary>Нужен ли блог и подписчики?</summary><div class="a">Нет. В UGC бренд публикует ролик со своего аккаунта или запускает его в рекламу. Ему важно, как ты снимаешь, а не сколько у тебя подписчиков.</div></details>
+      <details><summary>Какая техника нужна?</summary><div class="a">Смартфон с хорошей камерой. Штатив и лампа пригодятся, но на старте не обязательны — на второй неделе разберём, как снимать дома без студии.</div></details>
+      <details><summary>Сколько времени это занимает?</summary><div class="a">Один живой созвон в неделю (есть запись) и задание недели. Закладывай примерно 5–7 часов в неделю.</div></details>
+      <details><summary>Вы гарантируете работу и доход?</summary><div class="a">Нет, и честно говорим об этом. Бренд сам выбирает креатора, а доход зависит от тебя и твоих роликов. Мы даём практику, разбор каждого ролика, реальные брифы и каталог, который видят бренды. Плюс условная гарантия: сдаёшь все задания вовремя, а оплачиваемого брифа за 60 дней после выпуска нет — следующий поток бесплатно.</div></details>
+      <details><summary>Можно ли участвовать из Узбекистана или Кыргызстана?</summary><div class="a">Да. Всё проходит онлайн, на русском языке. Брифы будут и для Казахстана, и для Узбекистана.</div></details>
+      <details><summary>Как оплатить? Можно частями?</summary><div class="a">Да. Цена — $999 (≈ 447 000 ₸ или ≈ 11,8 млн сум). Удобный способ оплаты, в том числе частями, подберём на созвоне.</div></details>
+      <details><summary>Что если я передумаю?</summary><div class="a">Условия возврата прописаны в договоре-оферте, который ты получишь до оплаты.</div></details>
+      <details><summary>С какого возраста можно?</summary><div class="a">С 18 лет.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="apply" id="apply">
+  <div class="wrap sec apply-grid">
+    <div class="rv">
+      <span class="lbl">Заявка</span>
+      <h2>Забронируй <em>место в потоке</em></h2>
+      <p class="sub">Оставь заявку — менеджер свяжется с тобой в Telegram или WhatsApp и договорится о 15-минутном созвоне.</p>
+      <figure class="ph mini"><img src="img/hero-c.jpg" alt="" loading="lazy"></figure>
+    </div>
+    <div class="rv">
+      <form id="lead" novalidate>
+        <div class="f"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="given-name" required maxlength="80" placeholder="Как к тебе обращаться"></div>
+        <div class="f"><label for="f-contact">Telegram или WhatsApp</label><input id="f-contact" name="contact" required maxlength="80" placeholder="@username или +7 700 000 00 00"></div>
+        <div class="f"><label for="f-country">Страна</label><select id="f-country" name="country" required><option value="" disabled selected>Выбери страну</option><option>Казахстан</option><option>Узбекистан</option><option>Кыргызстан</option><option>Другая</option></select></div>
+        <div class="f"><span class="q" id="q-exp">Опыт в UGC</span><div class="chips" role="radiogroup" aria-labelledby="q-exp"><label><input type="radio" name="exp" value="нет опыта" checked><span>Нет опыта</span></label><label><input type="radio" name="exp" value="бартер"><span>Снимаю за бартер</span></label><label><input type="radio" name="exp" value="платные заказы"><span>Есть платные заказы</span></label></div></div>
+        <div class="f"><label for="f-social">Instagram или TikTok <span class="opt">— необязательно</span></label><input id="f-social" name="social" maxlength="120" placeholder="@твой_аккаунт"></div>
+        <div class="hp" aria-hidden="true"><label>Сайт <input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <label class="consent"><input type="checkbox" name="consent" required><span>Согласен(на) на обработку моих данных (имя, контакт, страна, аккаунт) командой UGC.camp, чтобы связаться со мной по заявке. Данные не передаём третьим лицам.</span></label>
+        <button class="btn" type="submit">Отправить заявку <span class="arr">→</span></button>
+        <p class="err" id="err" role="alert"></p>
+      </form>
+      <div class="thanks" id="thanks" role="status">
+        <div class="big">Заявка у нас!</div>
+        <p>Менеджер напишет тебе в Telegram или WhatsApp и предложит время для созвона.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top">UGC<i>.camp</i></a>
+    <span>Акселератор UGC-креаторов · Казахстан · Узбекистан · онлайн</span>
+    <span>© 2026 UGC.camp</span>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn" href="#apply">Забронировать место <span class="arr">→</span></a></div>
+
+<script>
+// Настройки сайта: адрес приёма заявок и контакт для запасного варианта.
+window.UGC = { leadsUrl: "", contactUrl: "" };
+
+document.documentElement.classList.add('js');
+(function(){ var t=document.querySelector('.gal-track'); if(!t) return; Array.prototype.slice.call(t.children).forEach(function(c){ var k=c.cloneNode(true); k.setAttribute('aria-hidden','true'); k.removeAttribute('role'); k.querySelectorAll('img').forEach(function(i){i.alt='';}); t.appendChild(k); }); })();
+(function(){
+  // плавное появление блоков
+  var els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+
+  // мобильная кнопка: видна после первого экрана и прячется у формы
+  var m = document.getElementById('mcta'), hero = document.querySelector('.hero .cta'), apply = document.getElementById('apply');
+  var heroOut = false, applyIn = false;
+  function upd(){ m.classList.toggle('on', heroOut && !applyIn); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){ heroOut = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; upd(); }).observe(hero);
+    new IntersectionObserver(function(es){ applyIn = es[0].isIntersecting; upd(); }).observe(apply);
+  }
+
+  // UTM-метки из ссылки
+  var q = new URLSearchParams(location.search), utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function(k){ if(q.get(k)) utm[k] = q.get(k); });
+
+  var f = document.getElementById('lead'), err = document.getElementById('err');
+  function fail(t){ err.textContent = t; err.classList.add('on'); }
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault(); err.classList.remove('on');
+    var d = Object.fromEntries(new FormData(f).entries());
+    if (!d.name || !d.name.trim()) return fail('Напиши, как к тебе обращаться.');
+    if (!d.contact || d.contact.replace(/\D/g,'').length < 7 && !/^@?[a-zA-Z0-9_]{4,}$/.test(d.contact.trim())) return fail('Укажи Telegram (@username) или номер WhatsApp.');
+    if (!d.country) return fail('Выбери страну.');
+    if (!f.consent.checked) return fail('Нужно согласие на обработку данных, чтобы мы могли связаться.');
+    if (d.website) return; // бот
+    d.utm = utm; d.page = location.href; d.ts = new Date().toISOString();
+    var btn = f.querySelector('button'); btn.disabled = true; btn.style.opacity = .6;
+    if (!window.UGC.leadsUrl) {
+      btn.disabled = false; btn.style.opacity = 1;
+      if (window.UGC.contactUrl) { location.href = window.UGC.contactUrl; return; }
+      return fail('Приём заявок подключается. Попробуй чуть позже.');
+    }
+    fetch(window.UGC.leadsUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(){
+        f.style.display = 'none'; document.getElementById('thanks').classList.add('on');
+        if (window.fbq) fbq('track', 'Lead');
+      })
+      .catch(function(){ btn.disabled = false; btn.style.opacity = 1; fail('Не получилось отправить. Проверь интернет и попробуй ещё раз.'); });
+  });
+})();
+</script>
+</body>
+</html>
