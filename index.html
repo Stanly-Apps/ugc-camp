@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UGC.camp — акселератор UGC-креаторов</title>
-<meta name="description" content="8 недель практики: снимаешь UGC для рекламы и tech UGC, собираешь портфолио и работаешь с реальными брифами брендов. Казахстан, Узбекистан, онлайн.">
+<title>UGC.camp — 21-дневный UGC-челлендж</title>
+<meta name="description" content="21 день — 21 UGC-ролик в портфолио. Каждый день новое задание: бриф, пример и короткий урок. Снимаешь на телефон, без блога и опыта. Онлайн, на русском.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ugc.camp/">
-<meta property="og:title" content="UGC.camp — научись снимать UGC, за который платят бренды">
-<meta property="og:description" content="Акселератор UGC-креаторов: 8 недель практики, разбор каждого ролика, реальные брифы брендов. Казахстан, Узбекистан, онлайн.">
+<meta property="og:title" content="UGC.camp — 21 день, 21 UGC-ролик в твоё портфолио">
+<meta property="og:description" content="Челлендж для будущих UGC-креаторов: одно задание в день, бриф, пример и урок. Снимаешь на телефон и собираешь портфолио, за которое платят бренды.">
 <meta property="og:image" content="https://ugc.camp/img/og.jpg">
 <meta name="theme-color" content="#F4F1EC">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -336,59 +336,124 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
 .js .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
+[hidden]{display:none!important}
+
+/* v3: челлендж */
+.topbar{background:var(--ink);color:#F4F1EC;font:500 14px/1.35 Onest,sans-serif;text-align:center;padding:10px 16px}
+.topbar b{color:var(--fire);font-weight:700}
+.cd{font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+.hash{color:var(--fire);font-weight:700;white-space:nowrap}
+
+.obj{margin-top:48px;display:grid;gap:16px}
+@media(min-width:760px){.obj{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.obj{grid-template-columns:repeat(3,1fr);gap:18px}}
+.obj .who h3{font-size:clamp(20px,2vw,24px)}
+.obj .who h3::before{content:"«"} .obj .who h3::after{content:"»"}
+
+.daywrap{position:relative;max-width:420px;margin:0 auto;width:100%}
+.daycard{background:var(--paper);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);overflow:hidden}
+.daycard .im{aspect-ratio:16/11;position:relative;overflow:hidden}
+.daycard .im img{width:100%;height:100%;object-fit:cover}
+.daycard .im .play{position:absolute;right:14px;bottom:14px;background:rgba(19,18,17,.8);color:#fff;border-radius:999px;padding:9px 13px;font:600 13px/1 Onest}
+.daycard .im .stk{left:14px;top:14px}
+.daycard .bd{padding:22px 22px 24px}
+.daycard .d{display:flex;justify-content:space-between;font:600 13px/1 Onest;color:var(--muted)}
+.daycard h3{margin:12px 0 6px;font-size:24px}
+.daycard .ln{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.4}
+.daycard .ln:first-of-type{border-top:0}
+.daycard .ln b{font-weight:700}
+.daycard .ln span{color:var(--ink2)}
+.daycard .pr{height:8px;border-radius:9px;background:var(--bg);margin:8px 0 18px;overflow:hidden}
+.daycard .pr i{display:block;height:100%;width:19%;background:var(--fire);border-radius:9px}
+.daycard .btn{width:100%;min-height:52px}
+.daywrap .stk.a{top:30%;left:-16px;transform:rotate(-6deg)}
+.daywrap .stk.b{top:-14px;right:18px;transform:rotate(5deg)}
+
+.bigtag{font:800 clamp(54px,10vw,128px)/.9 "Inter Tight",sans-serif;letter-spacing:-.045em;color:var(--fire);text-transform:lowercase;margin-bottom:20px;overflow-wrap:anywhere}
+
+.s21{display:flex;align-items:flex-end;gap:3px;height:150px;margin:26px 0 12px}
+.s21 span{flex:1;border-radius:6px 6px 3px 3px;background:var(--butter)}
+.s21 span.w2{background:var(--lilac)} .s21 span.w3{background:var(--fire)}
+.wlegend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px;font-size:13px;line-height:1.3;color:var(--ink2)}
+.wlegend span{display:flex;gap:7px;align-items:flex-start}
+.wlegend span::before{content:"";flex:none;width:10px;height:10px;border-radius:3px;margin-top:3px;background:var(--butter)}
+.wlegend span:nth-child(2)::before{background:var(--lilac)} .wlegend span:nth-child(3)::before{background:var(--fire)}
+.acc .when{display:block;font:500 13px/1.2 Onest;color:var(--muted);margin-top:6px;text-transform:none;letter-spacing:0}
+.days{list-style:none;display:grid;gap:9px}
+.days li{display:grid;grid-template-columns:66px 1fr;gap:10px;align-items:baseline}
+.days li b{font:600 13px/1 Onest;color:var(--muted);white-space:nowrap}
+
+.fit{margin-top:48px;display:grid;gap:16px}
+@media(min-width:900px){.fit{grid-template-columns:1fr 1fr;gap:20px}}
+.fit>div{border-radius:28px;padding:28px 26px}
+.fit .yes{background:var(--paper);border:1px solid var(--line)}
+.fit .no{background:var(--ink);color:#F4F1EC}
+.fit h3{margin-bottom:18px}
+.fit ul{list-style:none;display:grid;gap:12px}
+.fit li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45}
+.fit .yes li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:var(--fire);display:grid;place-items:center;font:700 13px/1 Onest;color:var(--ink)}
+.fit .no li::before{content:"✕";flex:none;width:24px;height:24px;border-radius:50%;background:rgba(244,241,236,.12);display:grid;place-items:center;font:700 12px/1 Onest;color:#F4F1EC}
+.fit .no li{color:#D9D2C8}
+
+.price .was{font:700 22px/1 "Inter Tight",sans-serif;color:#8E877D;text-decoration:line-through;text-decoration-thickness:2px}
+.price .until{display:inline-flex;gap:8px;align-items:center;margin-top:18px;background:rgba(255,90,31,.14);color:#FFB596;border-radius:999px;padding:9px 14px;font-size:14px;font-weight:600}
+.secure{margin-top:14px;font-size:13px;color:var(--muted);text-align:center}
+.price .secure{color:#A8A198;text-align:left}
 </style>
 </head>
 <body>
+
+<div class="topbar early-only" role="note">Ранняя цена <b data-k="price">29 900 ₸</b> до <span data-k="earlyLabel">30 ноября</span> · осталось <span class="cd" data-cd>—</span></div>
 
 <nav class="nav" aria-label="Главное меню">
   <div class="nav-in">
     <a class="logo" href="#top" aria-label="UGC.camp — наверх">UGC<i>.camp</i></a>
     <div class="nav-links">
-      <a href="#who">Кому подходит</a>
+      <a href="#how">Как это работает</a>
       <a href="#program">Программа</a>
-      <a href="#brands">Бренды</a>
-      <a href="#price">Стоимость</a>
+      <a href="#included">Что входит</a>
+      <a href="#price">Цена</a>
       <a href="#faq">Вопросы</a>
     </div>
-    <a class="btn dark" href="#apply">Оставить заявку</a>
+    <a class="btn dark" href="#checkout">Участвовать</a>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap hero-grid">
-    <figure class="ph side l"><img src="img/hero-a.jpg" alt="Девушка снимает на телефон ролик о готовке" fetchpriority="high"><span class="stk" style="top:16%;right:-16px;transform:rotate(6deg)">tech UGC</span></figure>
+    <figure class="ph side l"><img src="img/hero-a.jpg" alt="Девушка снимает на телефон ролик о готовке" fetchpriority="high"><span class="stk" style="top:16%;right:-16px;transform:rotate(6deg)">день 06 ✓</span></figure>
     <div class="hero-c">
       <div class="meta">
-        <div><small>Формат</small><b>онлайн + практика</b></div>
-        <div><small>Длительность</small><b>8 недель</b></div>
+        <div><small>Формат</small><b>челлендж онлайн</b></div>
+        <div><small>Старт</small><b data-k="startLabel">7 декабря</b></div>
       </div>
-      <h1>Научись снимать UGC, <em>за&nbsp;который платят бренды</em></h1>
-      <p class="sub">Акселератор для UGC-креаторов: снимаешь ролики для рекламы и tech UGC, собираешь портфолио и работаешь с реальными брифами брендов. Блог и подписчики не нужны — нужен телефон.</p>
+      <h1>21&nbsp;день — 21&nbsp;UGC-ролик <em>в&nbsp;твоё портфолио</em></h1>
+      <p class="sub">Челлендж для тех, кто хочет снимать UGC для брендов. Каждый день открывается новое задание: бриф, пример и короткий урок. Снимаешь на телефон, публикуешь с <span class="hash">#ugccamp</span> и идёшь вместе с другими участниками. Блог и опыт не нужны.</p>
       <div class="cta">
-        <a class="btn" href="#apply">Забронировать место <span class="arr">→</span></a>
+        <a class="btn" href="#checkout"><span>Участвовать за <span data-k="price">29 900 ₸</span></span> <span class="arr">→</span></a>
         <a class="btn ghost" href="#program">Смотреть программу</a>
       </div>
       <p class="geo">Казахстан · Узбекистан · Кыргызстан — онлайн, на русском языке</p>
     </div>
-    <figure class="ph side r"><img src="img/hero-b.jpg" alt="Девушка снимает видео-отзыв на телефон"><span class="stk lilac" style="bottom:14%;left:-20px;transform:rotate(-5deg)">реальные брифы</span></figure>
+    <figure class="ph side r"><img src="img/hero-b.jpg" alt="Девушка снимает видео-отзыв на телефон"><span class="stk lilac" style="bottom:14%;left:-20px;transform:rotate(-5deg)">#ugccamp</span></figure>
     <div class="hero-photos" aria-hidden="true">
-      <figure class="ph"><img src="img/hero-a.jpg" alt=""><span class="stk" style="top:10px;left:8px">tech UGC</span></figure>
+      <figure class="ph"><img src="img/hero-a.jpg" alt=""><span class="stk" style="top:10px;left:8px">день 06 ✓</span></figure>
       <figure class="ph"><img src="img/hero-c.jpg" alt=""><span class="stk ink" style="top:10px;left:50%;transform:translateX(-50%)"><span class="dot"></span>REC</span></figure>
-      <figure class="ph"><img src="img/hero-b.jpg" alt=""><span class="stk lilac" style="bottom:10px;right:8px">брифы</span></figure>
+      <figure class="ph"><img src="img/hero-b.jpg" alt=""><span class="stk lilac" style="bottom:10px;right:8px">#ugccamp</span></figure>
     </div>
   </div>
   <div class="wrap">
     <div class="facts rv">
-      <div><b>8 недель</b><span>живые созвоны и задание каждую неделю</span></div>
-      <div><b>Каждый ролик</b><span>с разбором: хук, кадр, звук, текст</span></div>
-      <div><b>Реальные брифы</b><span>от брендов-партнёров во время потока</span></div>
-      <div><b>$999</b><span>≈ 447 000 ₸ · ≈ 11,8 млн сум, можно частями</span></div>
+      <div><b>21 день</b><span>одно задание в день, 30–60 минут</span></div>
+      <div><b>21 ролик</b><span>в портфолио к финалу челленджа</span></div>
+      <div><b>3 недели</b><span>без лица → в кадре → реклама и tech UGC</span></div>
+      <div><b data-k="price">29 900 ₸</b><span><span data-k="priceUZS">≈ 790 000 сум</span> · <span class="early-only">ранняя цена</span><span class="late-only" hidden>оплата на сайте</span></span></div>
     </div>
   </div>
   <div class="ticker" aria-hidden="true">
     <div class="tk">
-      <span>UGC для рекламы</span><i>✦</i><span>tech UGC</span><i>✦</i><span>хук за 1,5 секунды</span><i>✦</i><span>портфолио</span><i>✦</i><span>брифы брендов</span><i>✦</i><span>прайс в ₸ и сумах</span><i>✦</i><span>AI-монтаж</span><i>✦</i>
-      <span>UGC для рекламы</span><i>✦</i><span>tech UGC</span><i>✦</i><span>хук за 1,5 секунды</span><i>✦</i><span>портфолио</span><i>✦</i><span>брифы брендов</span><i>✦</i><span>прайс в ₸ и сумах</span><i>✦</i><span>AI-монтаж</span><i>✦</i>
+      <span>21 день</span><i>✦</i><span>21 ролик</span><i>✦</i><span>#ugccamp</span><i>✦</i><span>неделя без лица</span><i>✦</i><span>хук за 1,5 секунды</span><i>✦</i><span>tech UGC</span><i>✦</i><span>портфолио</span><i>✦</i><span>прайс в ₸ и сумах</span><i>✦</i>
+      <span>21 день</span><i>✦</i><span>21 ролик</span><i>✦</i><span>#ugccamp</span><i>✦</i><span>неделя без лица</span><i>✦</i><span>хук за 1,5 секунды</span><i>✦</i><span>tech UGC</span><i>✦</i><span>портфолио</span><i>✦</i><span>прайс в ₸ и сумах</span><i>✦</i>
     </div>
   </div>
 </header>
@@ -415,17 +480,48 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
     </div>
   </div>
   <div class="wrap">
-    <div class="gal-h rv"><span class="lbl">Форматы, которые ты освоишь</span></div>
+    <div class="gal-h rv"><span class="lbl">Форматы, которые ты снимешь за 21 день</span></div>
     <div class="gal" role="list" aria-label="Форматы UGC"><div class="gal-track">
-      <figure class="fmt" role="listitem"><img src="img/f-unbox.jpg" alt="Распаковка смартфона" loading="lazy"><span class="tag">tech</span><b>Распаковка</b></figure>
-      <figure class="fmt" role="listitem"><img src="img/f-skin.jpg" alt="Девушка наносит крем" loading="lazy"><b>До и после</b></figure>
-      <figure class="fmt" role="listitem"><img src="img/f-app.jpg" alt="Съёмка на телефон со стабилизатором" loading="lazy"><span class="tag">tech</span><b>Демо приложения</b></figure>
-      <figure class="fmt" role="listitem"><img src="img/f-grwm.jpg" alt="Девушка в халате с телефоном" loading="lazy"><b>Утренний уход</b></figure>
-      <figure class="fmt" role="listitem"><img src="img/f-recipe.jpg" alt="Съёмка рецепта на кухне" loading="lazy"><b>Рецепт</b></figure>
-      <figure class="fmt" role="listitem"><img src="img/f-trend.jpg" alt="Девушка снимает тренд с кольцевой лампой" loading="lazy"><b>Тренд</b></figure>
-      <figure class="fmt" role="listitem"><img src="img/f-talk.jpg" alt="Портрет девушки" loading="lazy"><b>Говорящая голова</b></figure>
-      <figure class="fmt" role="listitem"><img src="img/hero-c.jpg" alt="Девушка снимает видео в студии" loading="lazy"><b>Отзыв</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-unbox.jpg" alt="Распаковка смартфона" loading="lazy"><span class="tag">день 1</span><b>Распаковка</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-recipe.jpg" alt="Съёмка рецепта на кухне" loading="lazy"><span class="tag">день 6</span><b>Процесс</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-talk.jpg" alt="Портрет девушки" loading="lazy"><span class="tag">день 9</span><b>Отзыв</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-grwm.jpg" alt="Девушка в халате с телефоном" loading="lazy"><span class="tag">день 11</span><b>Утренний уход</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-skin.jpg" alt="Девушка наносит крем" loading="lazy"><span class="tag">день 12</span><b>До и после</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-app.jpg" alt="Съёмка на телефон со стабилизатором" loading="lazy"><span class="tag">день 15</span><b>Демо приложения</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/f-trend.jpg" alt="Девушка снимает с кольцевой лампой" loading="lazy"><span class="tag">день 17</span><b>Три хука</b></figure>
+      <figure class="fmt" role="listitem"><img src="img/hero-c.jpg" alt="Девушка снимает видео в студии" loading="lazy"><span class="tag">день 19</span><b>Ролик по брифу</b></figure>
     </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="how" style="padding-top:0">
+  <div class="wrap two">
+    <div class="rv">
+      <span class="lbl">Как это работает</span>
+      <h2>Каждый день — <em>одно задание</em></h2>
+      <p class="sub">Никакой теории на месяцы вперёд. Открываешь день, снимаешь, публикуешь. Через 21 день у тебя портфолио, которое не стыдно показать бренду.</p>
+      <div class="steps3">
+        <div class="row"><span class="n">[ 01 ]</span><p><b>Открываешь день:</b> бриф как от настоящего бренда, пример готового ролика и урок на 5–10 минут.</p></div>
+        <div class="row"><span class="n">[ 02 ]</span><p><b>Снимаешь на телефон</b> то, что есть дома: крем, кофе, приложение. 20–40 минут вместе с монтажом.</p></div>
+        <div class="row"><span class="n">[ 03 ]</span><p><b>Публикуешь с <span class="hash">#ugccamp</span></b> в своём аккаунте-портфолио и смотришь, как то же задание сняли другие.</p></div>
+      </div>
+    </div>
+    <div class="daywrap rv" aria-label="Пример задания дня">
+      <div class="daycard">
+        <div class="im"><img src="img/f-unbox.jpg" alt="Распаковка посылки на столе" loading="lazy"><span class="stk">открыто сегодня</span><span class="play">▶ урок · 7 мин</span></div>
+        <div class="bd">
+          <div class="d"><span>День 04 из 21</span><span>неделя 1 · без лица</span></div>
+          <h3>Руки в кадре</h3>
+          <div class="pr"><i></i></div>
+          <div class="ln"><b>Бриф</b><span>Покажи, как пользоваться продуктом, в 5 кадрах. Без голоса, текст на экране.</span></div>
+          <div class="ln"><b>Пример</b><span>Готовый ролик на 15 секунд и разбор, почему он работает</span></div>
+          <div class="ln"><b>Опубликуй</b><span>в своём аккаунте с <span class="hash">#ugccamp</span></span></div>
+          <span class="btn" aria-hidden="true">Я сняла ✓</span>
+        </div>
+      </div>
+      <span class="stk lilac a">без лица</span>
+      <span class="stk fire b">20–40 минут</span>
     </div>
   </div>
 </section>
@@ -433,14 +529,16 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
 <section class="sec" id="who" style="padding-top:0">
   <div class="wrap">
     <div class="center-x rv">
-      <span class="lbl">Кому подходит</span>
-      <h2 class="center">UGC.camp для тебя, <em>если…</em></h2>
+      <span class="lbl">Что мешает начать</span>
+      <h2 class="center">Узнаёшь <em>себя?</em></h2>
     </div>
-    <div class="who-grid">
-      <article class="who rv"><span class="n">[ 01 ]</span><h3>Ты только начинаешь</h3><p>Давно смотришь на UGC, но не понимаешь, с чего начать, что снимать и кому это продавать.</p><div class="res ink"><small>Результат для тебя</small>Первые ролики по брифам, портфолио и понятный план, где искать заказы.</div></article>
-      <article class="who rv"><span class="n">[ 02 ]</span><h3>Снимаешь за бартер</h3><p>Уже делаешь распаковки и обзоры, но бренды платят продуктом, а не деньгами.</p><div class="res fire"><small>Результат для тебя</small>Прайс в тенге или сумах, разговор с брендом о деньгах и правах на ролик, первые оплачиваемые брифы.</div></article>
-      <article class="who rv"><span class="n">[ 03 ]</span><h3>Ведёшь блог или SMM</h3><p>Умеешь делать контент и хочешь отдельный источник дохода, который не зависит от охватов.</p><div class="res lilac"><small>Результат для тебя</small>UGC как услуга: хуки, сценарии для рекламы, tech UGC и понятный процесс сдачи ролика бренду.</div></article>
-      <article class="who rv"><span class="n">[ 04 ]</span><h3>Хочешь работать из дома</h3><p>Учёба, декрет или основная работа: нужен гибкий график и задачи, которые можно делать с телефона.</p><div class="res butter"><small>Результат для тебя</small>Профессия в своём графике: от брифа до готового ролика — всё на телефон.</div></article>
+    <div class="obj">
+      <article class="who rv"><span class="n">[ 01 ]</span><h3>Я стесняюсь камеры</h3><p>Хочется попробовать, но от мысли говорить в кадр всё сжимается.</p><div class="res ink"><small>В челлендже</small>Первая неделя — только ролики без лица и голоса: руки, продукт, текст на экране. В кадр выходишь на второй неделе, когда уже привыкнешь.</div></article>
+      <article class="who rv"><span class="n">[ 02 ]</span><h3>Не знаю, что снимать</h3><p>Открываешь камеру, смотришь на неё и закрываешь.</p><div class="res fire"><small>В челлендже</small>Каждый день готовый бриф и пример. Придумывать с нуля не нужно — только снять по заданию.</div></article>
+      <article class="who rv"><span class="n">[ 03 ]</span><h3>У меня нет продуктов брендов</h3><p>Кажется, что для UGC нужны посылки от компаний.</p><div class="res lilac"><small>В челлендже</small>Снимаешь то, что уже есть дома: крем, кофе, кроссовки, приложение в телефоне. Бренды смотрят на то, как ты снимаешь.</div></article>
+      <article class="who rv"><span class="n">[ 04 ]</span><h3>Начинала и бросила</h3><p>Пара роликов, тишина — и желание пропало.</p><div class="res butter"><small>В челлендже</small>Одно небольшое задание в день и люди, которые снимают то же самое рядом с тобой. Бросить сложнее, чем продолжить.</div></article>
+      <article class="who rv"><span class="n">[ 05 ]</span><h3>Не умею монтировать</h3><p>CapCut пугает, а платить монтажёру — не вариант.</p><div class="res ink"><small>В челлендже</small>В стартовом наборе CapCut за 15 минут: склейка, субтитры, музыка. Дальше монтаж растёт вместе с заданиями.</div></article>
+      <article class="who rv"><span class="n">[ 06 ]</span><h3>Бренды мне не отвечают</h3><p>Пишешь компаниям, а показать нечего.</p><div class="res fire"><small>В челлендже</small>За 21 день собираешь 21 ролик, аккаунт-портфолио и прайс. На последней неделе — письмо бренду, которое читают.</div></article>
     </div>
   </div>
 </section>
@@ -448,13 +546,14 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
 <section class="dark" id="diff">
   <div class="wrap sec dark-grid">
     <div class="rv">
-      <span class="lbl">Чем мы отличаемся</span>
-      <h2>Это не курс в записи. <em>Это 8 недель практики</em></h2>
+      <span class="lbl">Снимаешь не в стол</span>
+      <div class="bigtag">#ugccamp</div>
+      <h2 style="font-size:clamp(30px,4.6vw,54px);max-width:18ch">Каждый ролик — <em>в&nbsp;портфолио,</em> а не в черновики</h2>
       <div class="diff">
-        <div><span class="n">01</span><h3>Учат те, кто покупает UGC</h3><p>Мы каждый день запускаем рекламу на UGC-роликах и видим цифры: какие хуки держат, какие ролики окупаются. Этому и учим.</p></div>
-        <div><span class="n">02</span><h3>Реальные брифы, а не только домашки</h3><p>Во второй половине программы снимаешь задания от брендов-партнёров. Лучшие ролики бренды берут в работу и оплачивают.</p></div>
-        <div><span class="n">03</span><h3>Tech UGC</h3><p>Ролики для приложений и онлайн-сервисов: запись экрана, демо функций, AI. Здесь чек выше, а креаторов мало.</p></div>
-        <div><span class="n">04</span><h3>Разбор каждого ролика</h3><p>Не «молодец, хорошо», а конкретно: хук, кадр, звук, текст и что переснять.</p></div>
+        <div><span class="n">01</span><h3>Публикуешь каждый день</h3><p>Ролики живут в твоём аккаунте-портфолио с хэштегом челленджа. К финалу там 21 работа.</p></div>
+        <div><span class="n">02</span><h3>Видишь, как сняли другие</h3><p>Одно задание — десятки версий. Лучший способ понять, что цепляет, а что нет.</p></div>
+        <div><span class="n">03</span><h3>Форматы из рекламы</h3><p>Задания построены на форматах, которые бренды покупают для рекламы: хук, демо, отзыв, «до и после», tech UGC.</p></div>
+        <div><span class="n">04</span><h3>Лучшие ролики недели</h3><p>Каждую неделю показываем сильные работы участников в аккаунте UGC.camp.</p></div>
       </div>
     </div>
     <div class="ringph rv"><img src="img/ring.jpg" alt="Рука на фоне кольцевой лампы" loading="lazy"><span class="stk fire">не нужен блог</span></div>
@@ -465,43 +564,27 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
   <div class="wrap">
     <div class="rv">
       <span class="lbl">Программа</span>
-      <h2>8 недель — <em>от первого ролика</em> до брифов брендов</h2>
+      <h2>21 день — <em>от первого ролика</em> до письма бренду</h2>
     </div>
     <div class="prog">
       <div class="prog-card rv">
-        <h3>8 недель<br>8 шагов</h3>
-        <div class="pills"><span class="pill">созвон каждую неделю</span><span class="pill l">задание недели</span></div>
-        <div class="stairs" aria-hidden="true">
-          <span style="height:26%"><b>1</b></span><span style="height:35%"><b>2</b></span><span style="height:44%"><b>3</b></span><span style="height:53%"><b>4</b></span><span style="height:62%"><b>5</b></span><span class="f" style="height:72%"><b>6</b></span><span class="f" style="height:84%"><b>7</b></span><span class="f" style="height:100%"><b>8</b></span>
+        <h3>21 день<br>3 недели</h3>
+        <div class="pills"><span class="pill">задание каждый день</span><span class="pill l">в своём темпе</span></div>
+        <div class="s21" aria-hidden="true">
+          <span style="height:20%"></span><span style="height:24%"></span><span style="height:28%"></span><span style="height:32%"></span><span style="height:36%"></span><span style="height:40%"></span><span style="height:44%"></span>
+          <span class="w2" style="height:48%"></span><span class="w2" style="height:52%"></span><span class="w2" style="height:56%"></span><span class="w2" style="height:60%"></span><span class="w2" style="height:64%"></span><span class="w2" style="height:68%"></span><span class="w2" style="height:72%"></span>
+          <span class="w3" style="height:76%"></span><span class="w3" style="height:80%"></span><span class="w3" style="height:84%"></span><span class="w3" style="height:88%"></span><span class="w3" style="height:92%"></span><span class="w3" style="height:96%"></span><span class="w3" style="height:100%"></span>
         </div>
-        <p>Каждая неделя: живой созвон с разбором, задание и обратная связь по каждому ролику. С 6-й недели — реальные брифы брендов.</p>
-        <a class="btn" href="#apply" style="width:100%">Хочу в поток <span class="arr">→</span></a>
+        <div class="wlegend"><span>Неделя 1<br>без лица</span><span>Неделя 2<br>в кадре</span><span>Неделя 3<br>реклама и tech</span></div>
+        <p>Новая неделя открывается каждый понедельник. Пропустила день — задания никуда не денутся, доступ остаётся навсегда.</p>
+        <a class="btn" href="#checkout" style="width:100%">Участвовать <span class="arr">→</span></a>
       </div>
       <div class="acc">
-        <details class="rv" open><summary><span class="wk">01</span><h3>База UGC</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Что такое UGC и чем он отличается от блогинга</li><li>Какие ролики покупают бренды в Казахстане и Узбекистане</li><li>Выбор ниши и позиционирование креатора</li></ul><div class="task"><b>Задание:</b> разобрать 10 рекламных UGC-роликов и выбрать свою нишу.</div></div></details>
-        <details class="rv"><summary><span class="wk">02</span><h3>Съёмка на телефон</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Свет, звук и кадр дома, без студии</li><li>Ракурсы, крупные планы, перебивки</li><li>Как снимать руки, продукт и себя в кадре</li></ul><div class="task"><b>Задание:</b> первый ролик-распаковка.</div></div></details>
-        <details class="rv"><summary><span class="wk">03</span><h3>Сценарий и хук</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Первые 1,5 секунды: хуки, которые останавливают ленту</li><li>Структура рекламного ролика</li><li>Как писать сценарий по брифу бренда</li></ul><div class="task"><b>Задание:</b> 3 версии хука для одного ролика.</div></div></details>
-        <details class="rv"><summary><span class="wk">04</span><h3>Монтаж и AI</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>CapCut: темп, субтитры, звук</li><li>AI-инструменты для монтажа, озвучки и идей</li><li>Экспорт под Reels и TikTok</li></ul><div class="task"><b>Задание:</b> смонтировать ролик с субтитрами.</div></div></details>
-        <details class="rv"><summary><span class="wk">05</span><h3>Tech UGC</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Ролики для приложений и онлайн-сервисов</li><li>Запись экрана и демо функций</li><li>Как показать продукт, который нельзя потрогать</li></ul><div class="task"><b>Задание:</b> ролик для мобильного приложения.</div></div></details>
-        <details class="rv"><summary><span class="wk">06</span><h3>Реклама и цифры</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Как бренд оценивает ролик: досмотры, клики, стоимость установки</li><li>Версии ролика и тесты</li><li>Права на использование ролика в рекламе</li></ul><div class="task"><b>Задание:</b> первый реальный бриф бренда.</div></div></details>
-        <details class="rv"><summary><span class="wk">07</span><h3>Портфолио и прайс</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Портфолио, которое бренды открывают и досматривают</li><li>Прайс в тенге и сумах, пакеты роликов</li><li>Договор, налоги и приём оплаты в KZ и UZ</li></ul><div class="task"><b>Задание:</b> портфолио и прайс-лист.</div></div></details>
-        <details class="rv"><summary><span class="wk">08</span><h3>Выход на бренды</h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Где искать заказы: бренды, платформы, агентства</li><li>Отклики и письма брендам, которые читают</li><li>Как из одного ролика вырасти в постоянную работу</li></ul><div class="task"><b>Задание:</b> отклики брендам и выпускной разбор портфолио.</div></div></details>
+        <details class="rv" open><summary><span class="wk">00</span><h3>Стартовый набор<span class="when">сразу после оплаты</span></h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ul><li>Что такое UGC и сколько за него платят в Казахстане и Узбекистане</li><li>Свет, звук и кадр на телефон — дома, без студии</li><li>CapCut за 15 минут: склейка, субтитры, музыка</li><li>Аккаунт-портфолио: как назвать и оформить</li></ul><div class="task"><b>Задание:</b> оформить аккаунт-портфолио и снять пробный ролик.</div></div></details>
+        <details class="rv"><summary><span class="wk">01</span><h3>Без лица и голоса<span class="when">дни 1–7 · открывается <span data-k="w1">7 декабря</span></span></h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ol class="days"><li><b>День 1</b>Распаковка: открываешь посылку в 5 кадрах</li><li><b>День 2</b>Продукт крупным планом: красивые перебивки</li><li><b>День 3</b>ASMR: звук продукта вместо голоса</li><li><b>День 4</b>Руки в кадре: как пользоваться продуктом</li><li><b>День 5</b>Текст на экране: «3 причины попробовать»</li><li><b>День 6</b>Процесс за 15 секунд: рецепт, уход, сборка</li><li><b>День 7</b>Пересъёмка: лучший ролик недели, только сильнее</li></ol><div class="task"><b>Итог недели:</b> 7 роликов без лица в портфолио.</div></div></details>
+        <details class="rv"><summary><span class="wk">02</span><h3>Говоришь в кадр<span class="when">дни 8–14 · открывается <span data-k="w2">14 декабря</span></span></h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ol class="days"><li><b>День 8</b>Хук за 1,5 секунды: первые слова, которые останавливают ленту</li><li><b>День 9</b>Отзыв от первого лица: «я попробовала и…»</li><li><b>День 10</b>Проблема → решение</li><li><b>День 11</b>Утренний уход: продукт в твоей рутине</li><li><b>День 12</b>До и после</li><li><b>День 13</b>Миф и правда о продукте</li><li><b>День 14</b>Один текст — три подачи: спокойно, с энергией, с юмором</li></ol><div class="task"><b>Итог недели:</b> 14 роликов, и говорить в кадр уже не страшно.</div></div></details>
+        <details class="rv"><summary><span class="wk">03</span><h3>Реклама и tech UGC<span class="when">дни 15–21 · открывается <span data-k="w3">21 декабря</span></span></h3><span class="ic" aria-hidden="true">→</span></summary><div class="body"><ol class="days"><li><b>День 15</b>Демо приложения: запись экрана и ты в кадре</li><li><b>День 16</b>Tech UGC для онлайн-сервиса: как показать то, что нельзя потрогать</li><li><b>День 17</b>Три хука для одного ролика: так бренды тестируют рекламу</li><li><b>День 18</b>Рекламная структура: хук → проблема → демо → призыв</li><li><b>День 19</b>Ролик по брифу бренда — как в настоящем ТЗ</li><li><b>День 20</b>Портфолио и прайс в тенге или сумах</li><li><b>День 21</b>Финал: письмо бренду и ролик-визитка</li></ol><div class="task"><b>Итог:</b> 21 ролик, аккаунт-портфолио, прайс и первые отклики брендам.</div></div></details>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="brands" style="padding-top:0">
-  <div class="wrap">
-    <div class="rv">
-      <span class="lbl">Работа с брендами</span>
-      <h2>Как ты <em>выходишь на бренды</em></h2>
-      <p class="sub">Обучение и работа идут вместе: сначала учебные брифы, потом настоящие задания от брендов, после выпуска — каталог креаторов.</p>
-    </div>
-    <div class="bsteps">
-      <article class="bs rv"><div class="im"><img src="img/step-1.jpg" alt="Девушка настраивает штатив с телефоном" loading="lazy"><span class="stk">недели 1–5</span></div><div class="tx"><small>[ 01 ]</small><h3>Учебные брифы</h3><p>Снимаешь по ТЗ, как для настоящего клиента, и получаешь разбор каждого ролика.</p></div></article>
-      <article class="bs rv"><div class="im"><img src="img/step-2.jpg" alt="Девушка снимает себя на телефон в комнате" loading="lazy"><span class="stk lilac">недели 6–8</span></div><div class="tx"><small>[ 02 ]</small><h3>Реальные брифы</h3><p>Задания от брендов-партнёров: приложения, онлайн-сервисы, локальные бренды Казахстана и Узбекистана.</p></div></article>
-      <article class="bs rv"><div class="im"><img src="img/step-3.jpg" alt="Девушка работает за ноутбуком" loading="lazy"><span class="stk fire">после выпуска</span></div><div class="tx"><small>[ 03 ]</small><h3>Каталог креаторов</h3><p>Портфолио выпускников попадает в каталог, который видят бренды. В чате выпускников появляются новые брифы.</p></div></article>
     </div>
   </div>
 </section>
@@ -510,17 +593,17 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
   <div class="wrap">
     <div class="rv">
       <span class="lbl">Что входит</span>
-      <h2>Всё, что нужно <em>UGC-креатору</em></h2>
+      <h2>Всё, что нужно, <em>чтобы дойти до конца</em></h2>
     </div>
     <div class="inc">
-      <div class="rv"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg><b>Живые созвоны</b><span>Каждую неделю, с записями</span></div>
-      <div class="rv"><svg viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 7l3 3"/></svg><b>Разбор каждого ролика</b><span>Хук, кадр, звук, текст</span></div>
-      <div class="rv"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><b>Реальные брифы</b><span>От брендов-партнёров</span></div>
-      <div class="rv"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><b>Чат потока и кураторы</b><span>Вопросы — в любой день</span></div>
-      <div class="rv"><svg viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 13h8M8 17h6"/></svg><b>Шаблоны</b><span>Хуки, сценарии, письма брендам</span></div>
-      <div class="rv"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.6L18 9l-4.2 1.6L12 15l-1.8-4.4L6 9l4.2-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg><b>AI-модуль</b><span>Монтаж, озвучка, идеи</span></div>
-      <div class="rv"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9 9.5c0-1.4 1.3-2 3-2s3 .7 3 2-1.3 1.8-3 2.2-3 1-3 2.3 1.3 2 3 2 3-.6 3-2M12 5.5v2M12 16.5v2"/></svg><b>Прайс и договор</b><span>Ставки, налоги, оплата в KZ и UZ</span></div>
-      <div class="rv"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><b>Каталог креаторов</b><span>Бренды видят твоё портфолио</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><b>21 задание</b><span>Бриф, пример и чек-лист на каждый день</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg><b>Видеоуроки</b><span>5–10 минут, только по делу</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="4"/><path d="M4 8h3l2-3h6l2 3h3v11H4z"/></svg><b>Стартовый набор</b><span>Свет, звук, CapCut, портфолио</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.6L18 9l-4.2 1.6L12 15l-1.8-4.4L6 9l4.2-1.4z"/><path d="M18 15l.9 2.1L21 18l-2.1.9L18 21l-.9-2.1L15 18l2.1-.9z"/></svg><b>AI-промпты</b><span>Сценарий по брифу, 10 хуков, самопроверка ролика</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 13h8M8 17h6"/></svg><b>Шаблоны</b><span>Прайс, портфолио, письмо бренду</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><b>База брендов KZ и UZ</b><span>Кто работает с UGC и куда откликаться</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><b>Чат участников</b><span>Снимаете вместе, каждый день</span></div>
+      <div class="rv"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><b>Доступ навсегда</b><span>Проходи в своём темпе</span></div>
     </div>
   </div>
 </section>
@@ -529,27 +612,56 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
   <div class="wrap two">
     <div class="rv">
       <span class="lbl">Результат</span>
-      <h2>Через 8 недель <em>у тебя будет</em></h2>
+      <h2>Через 21 день <em>у тебя будет</em></h2>
       <ul class="checks">
-        <li>8+ роликов в портфолио: распаковки, обзоры, tech UGC</li>
-        <li>Страница-портфолио и прайс в тенге или сумах</li>
-        <li>Опыт работы по реальным брифам брендов</li>
-        <li>Система: где искать заказы и как откликаться</li>
-        <li>Место в каталоге креаторов UGC.camp</li>
+        <li>21 ролик в портфолио: без лица, в кадре, реклама и tech UGC</li>
+        <li>Аккаунт-портфолио, который можно отправить бренду</li>
+        <li>Прайс в тенге или сумах</li>
+        <li>Привычка снимать каждый день — без «завтра начну»</li>
+        <li>Список брендов и платформ, куда откликаться, и первое письмо бренду</li>
       </ul>
     </div>
     <div class="resph rv">
       <figure class="ph"><img src="img/result.jpg" alt="Креатор снимает ролик об уходе за кожей" loading="lazy"></figure>
-      <span class="stk a">8+ роликов</span>
+      <span class="stk a">21 ролик</span>
       <span class="stk lilac b">портфолио готово</span>
     </div>
   </div>
   <div class="wrap">
     <div class="guar rv">
-      <div class="t">Честная<br>гарантия</div>
+      <div class="t">Попробуй<br>без риска</div>
       <div>
-        <p>Сдаёшь все задания вовремя, а за 60 дней после выпуска у тебя нет ни одного оплачиваемого брифа — проходишь следующий поток бесплатно.</p>
-        <small>Точные условия — в договоре-оферте. Доход мы не обещаем: он зависит от тебя и от брендов. Мы обещаем практику, разборы и доступ к брифам.</small>
+        <p>Пройди первую неделю. Если поймёшь, что UGC не твоё, напиши нам в течение 7 дней после старта — вернём деньги полностью.</p>
+        <small>Точные условия — в оферте. Доход и заказы мы не обещаем: они зависят от тебя и от брендов. Мы даём задания, форматы и систему, которая помогает дойти до конца.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <span class="lbl">Честно</span>
+      <h2>Кому <em>подойдёт</em></h2>
+    </div>
+    <div class="fit">
+      <div class="yes rv">
+        <h3>Челлендж для тебя, если</h3>
+        <ul>
+          <li>Хочешь попробовать UGC без больших вложений</li>
+          <li>Стесняешься камеры — первая неделя без лица</li>
+          <li>Есть телефон и 30–60 минут в день</li>
+          <li>Уже снимаешь за бартер и хочешь портфолио, за которое платят</li>
+          <li>Учишься, сидишь в декрете или работаешь и ищешь занятие в своём графике</li>
+        </ul>
+      </div>
+      <div class="no rv">
+        <h3>Не для тебя, если</h3>
+        <ul>
+          <li>Ждёшь гарантированный доход или заказы — их не обещаем</li>
+          <li>Не готова снимать и публиковать 21 день подряд</li>
+          <li>Нужен личный наставник, который разберёт каждый ролик: это челлендж в своём темпе, без кураторов</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -559,12 +671,12 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
   <div class="wrap">
     <div class="team rv">
       <div>
-        <span class="lbl">Кто за этим стоит</span>
+        <span class="lbl">Кто это сделал</span>
         <h2 style="font-size:clamp(32px,4.4vw,54px)">Команда, которая <em>сама покупает UGC</em></h2>
       </div>
       <div>
         <p>Мы каждый день запускаем рекламу на UGC-роликах на рынках США, Европы и СНГ и видим, какие ролики окупаются, а какие — нет.</p>
-        <p>В UGC.camp мы учим тому, что работает в рекламе сейчас, и приводим брендов-партнёров, которым нужны креаторы. Наставников и спикеров потока представим перед стартом.</p>
+        <p>Задания челленджа построены на форматах, которые бренды реально берут в рекламу. Никакой воды: 21 день практики, после которой есть что показать.</p>
       </div>
     </div>
   </div>
@@ -573,26 +685,28 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
 <section class="sec" id="price" style="padding-top:0">
   <div class="wrap">
     <div class="center-x rv">
-      <span class="lbl">Стоимость</span>
-      <h2 class="center">Участие <em>в потоке</em></h2>
+      <span class="lbl">Цена</span>
+      <h2 class="center">Участие <em>в челлендже</em></h2>
     </div>
     <div class="price rv">
       <div>
-        <span class="lbl">Поток · 8 недель · онлайн</span>
+        <span class="lbl">Челлендж · 21 день · онлайн</span>
         <h3>UGC.camp</h3>
-        <div class="amt"><b>$999</b><div class="loc"><span>≈ 447 000 ₸</span><span>≈ 11,8 млн сум</span></div></div>
-        <p class="note">Можно оплатить частями — варианты подберём на созвоне. Группа небольшая: мы разбираем каждый ролик.</p>
-        <a class="btn" href="#apply">Забронировать место <span class="arr">→</span></a>
+        <div class="amt"><b data-k="price">29 900 ₸</b><div class="loc"><span class="was early-only" data-k="full">49 900 ₸</span><span data-k="priceUZS">≈ 790 000 сум</span></div></div>
+        <div class="until early-only">Ранняя цена до <span data-k="earlyLabel">30 ноября</span> · <span class="cd" data-cd>—</span></div>
+        <p class="note">Одна оплата, доступ навсегда. Оплачиваешь на сайте — доступ к стартовому набору приходит сразу.</p>
+        <a class="btn" href="#checkout">Участвовать <span class="arr">→</span></a>
+        <p class="secure">Не подошло — вернём деньги в первые 7 дней после старта.</p>
       </div>
       <ul>
-        <li>8 недель программы и живые созвоны каждую неделю</li>
-        <li>Разбор каждого ролика</li>
-        <li>Реальные брифы брендов-партнёров</li>
-        <li>Чат потока и кураторы</li>
-        <li>Шаблоны хуков, сценариев и писем брендам</li>
-        <li>AI-модуль: монтаж, озвучка, идеи</li>
-        <li>Прайс, договор и налоги в KZ и UZ</li>
-        <li>Каталог креаторов и чат выпускников</li>
+        <li>21 задание: бриф, пример и чек-лист на каждый день</li>
+        <li>Видеоуроки по 5–10 минут</li>
+        <li>Стартовый набор: свет, звук, CapCut, портфолио</li>
+        <li>AI-промпты: сценарий по брифу, хуки, самопроверка</li>
+        <li>Шаблоны прайса, портфолио и письма бренду</li>
+        <li>База брендов Казахстана и Узбекистана, которые работают с UGC</li>
+        <li>Чат участников</li>
+        <li>Доступ навсегда</li>
       </ul>
     </div>
   </div>
@@ -601,13 +715,13 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
 <section class="sec" id="join" style="padding-top:0">
   <div class="wrap">
     <div class="rv">
-      <span class="lbl">Как попасть</span>
-      <h2>Три шага <em>до старта</em></h2>
+      <span class="lbl">Как начать</span>
+      <h2>Три шага <em>до первого ролика</em></h2>
     </div>
     <div class="join">
-      <div class="rv"><span class="n">1</span><h3>Заявка</h3><p>Одна минута: имя, контакт, страна и твой опыт в UGC.</p></div>
-      <div class="rv"><span class="n">2</span><h3>Созвон 15 минут</h3><p>Расскажем о потоке, ответим на вопросы и вместе поймём, подходит ли тебе программа.</p></div>
-      <div class="rv"><span class="n">3</span><h3>Бронь и старт</h3><p>Фиксируешь место, получаешь доступ в чат потока и первые материалы.</p></div>
+      <div class="rv"><span class="n">1</span><h3>Оплачиваешь на сайте</h3><p>Две минуты, картой. Без звонков и менеджеров.</p></div>
+      <div class="rv"><span class="n">2</span><h3>Получаешь доступ</h3><p>Сразу приходит письмо и ссылка в Telegram: открывается стартовый набор и чат участников.</p></div>
+      <div class="rv"><span class="n">3</span><h3><span data-k="startLabel">7 декабря</span> — день 1</h3><p>Дальше одно задание в день. Через три недели у тебя 21 ролик.</p></div>
     </div>
   </div>
 </section>
@@ -619,41 +733,45 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
       <h2>Частые <em>вопросы</em></h2>
     </div>
     <div class="faq">
-      <details><summary>Нужен ли блог и подписчики?</summary><div class="a">Нет. В UGC бренд публикует ролик со своего аккаунта или запускает его в рекламу. Ему важно, как ты снимаешь, а не сколько у тебя подписчиков.</div></details>
-      <details><summary>Какая техника нужна?</summary><div class="a">Смартфон с хорошей камерой. Штатив и лампа пригодятся, но на старте не обязательны — на второй неделе разберём, как снимать дома без студии.</div></details>
-      <details><summary>Сколько времени это занимает?</summary><div class="a">Один живой созвон в неделю (есть запись) и задание недели. Закладывай примерно 5–7 часов в неделю.</div></details>
-      <details><summary>Вы гарантируете работу и доход?</summary><div class="a">Нет, и честно говорим об этом. Бренд сам выбирает креатора, а доход зависит от тебя и твоих роликов. Мы даём практику, разбор каждого ролика, реальные брифы и каталог, который видят бренды. Плюс условная гарантия: сдаёшь все задания вовремя, а оплачиваемого брифа за 60 дней после выпуска нет — следующий поток бесплатно.</div></details>
-      <details><summary>Можно ли участвовать из Узбекистана или Кыргызстана?</summary><div class="a">Да. Всё проходит онлайн, на русском языке. Брифы будут и для Казахстана, и для Узбекистана.</div></details>
-      <details><summary>Как оплатить? Можно частями?</summary><div class="a">Да. Цена — $999 (≈ 447 000 ₸ или ≈ 11,8 млн сум). Удобный способ оплаты, в том числе частями, подберём на созвоне.</div></details>
-      <details><summary>Что если я передумаю?</summary><div class="a">Условия возврата прописаны в договоре-оферте, который ты получишь до оплаты.</div></details>
+      <details><summary>Нужен ли блог и подписчики?</summary><div class="a">Нет. В UGC бренд публикует ролик со своего аккаунта или запускает его в рекламу. Ему важно, как ты снимаешь, а не сколько у тебя подписчиков. Для челленджа заведёшь отдельный аккаунт-портфолио — в стартовом наборе покажем как.</div></details>
+      <details><summary>Какая техника нужна?</summary><div class="a">Только смартфон. Штатив и лампа пригодятся, но на старте не обязательны — в стартовом наборе разберём, как снимать дома без студии.</div></details>
+      <details><summary>Сколько времени в день?</summary><div class="a">30–60 минут: урок на 5–10 минут и съёмка с монтажом.</div></details>
+      <details><summary>Что если я пропущу день?</summary><div class="a">Ничего страшного. Задания остаются открытыми, доступ — навсегда. Можно догнать в своём темпе или пройти челлендж позже.</div></details>
+      <details><summary>Будет ли разбор моих роликов?</summary><div class="a">Личного разбора нет — это челлендж в своём темпе. Есть чек-лист к каждому заданию, AI-промпт для самопроверки и чат участников. Сильные работы недели показываем в аккаунте UGC.camp.</div></details>
+      <details><summary>Вы гарантируете заказы и доход?</summary><div class="a">Нет, и честно говорим об этом. Бренд сам выбирает креатора, а доход зависит от тебя. Мы даём 21 задание, форматы из рекламы, шаблоны и базу брендов, куда откликаться.</div></details>
+      <details><summary>Можно ли участвовать из Узбекистана или Кыргызстана?</summary><div class="a">Да. Всё проходит онлайн и на русском языке.</div></details>
+      <details><summary>Как оплатить?</summary><div class="a">Картой прямо на сайте, без звонков и переписок. Доступ к стартовому набору приходит сразу после оплаты.</div></details>
+      <details><summary>Можно вернуть деньги?</summary><div class="a">Да. Если в первые 7 дней после старта поймёшь, что не твоё, напиши нам — вернём всю сумму. Условия — в оферте.</div></details>
       <details><summary>С какого возраста можно?</summary><div class="a">С 18 лет.</div></details>
     </div>
   </div>
 </section>
 
-<section class="apply" id="apply">
+<section class="apply" id="checkout">
   <div class="wrap sec apply-grid">
     <div class="rv">
-      <span class="lbl">Заявка</span>
-      <h2>Забронируй <em>место в потоке</em></h2>
-      <p class="sub">Оставь заявку — менеджер свяжется с тобой в Telegram или WhatsApp и договорится о 15-минутном созвоне.</p>
+      <span class="lbl" data-mode="checkout">Участие</span><span class="lbl" data-mode="waitlist" hidden>Лист ожидания</span>
+      <h2 data-mode="checkout">Забирай место <em class="early-only">по ранней цене</em><em class="late-only" hidden>в челлендже</em></h2>
+      <h2 data-mode="waitlist" hidden>Закрепи <em class="early-only">раннюю цену</em><em class="late-only" hidden>место</em></h2>
+      <p class="sub" data-mode="checkout">Заполни три поля и переходи к оплате. Доступ к стартовому набору придёт на почту сразу после оплаты.</p>
+      <p class="sub" data-mode="waitlist" hidden>Оплата откроется в ближайшие дни. Оставь почту — пришлём ссылку на оплату первой<span class="early-only">, и ранняя цена останется за тобой</span>.</p>
       <figure class="ph mini"><img src="img/hero-c.jpg" alt="" loading="lazy"></figure>
     </div>
     <div class="rv">
       <form id="lead" novalidate>
         <div class="f"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="given-name" required maxlength="80" placeholder="Как к тебе обращаться"></div>
-        <div class="f"><label for="f-contact">Telegram или WhatsApp</label><input id="f-contact" name="contact" required maxlength="80" placeholder="@username или +7 700 000 00 00"></div>
+        <div class="f"><label for="f-email">Почта</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120" placeholder="name@mail.com"></div>
+        <div class="f"><label for="f-contact">Telegram <span class="opt">— для чата участников</span></label><input id="f-contact" name="contact" maxlength="80" placeholder="@username"></div>
         <div class="f"><label for="f-country">Страна</label><select id="f-country" name="country" required><option value="" disabled selected>Выбери страну</option><option>Казахстан</option><option>Узбекистан</option><option>Кыргызстан</option><option>Другая</option></select></div>
-        <div class="f"><span class="q" id="q-exp">Опыт в UGC</span><div class="chips" role="radiogroup" aria-labelledby="q-exp"><label><input type="radio" name="exp" value="нет опыта" checked><span>Нет опыта</span></label><label><input type="radio" name="exp" value="бартер"><span>Снимаю за бартер</span></label><label><input type="radio" name="exp" value="платные заказы"><span>Есть платные заказы</span></label></div></div>
-        <div class="f"><label for="f-social">Instagram или TikTok <span class="opt">— необязательно</span></label><input id="f-social" name="social" maxlength="120" placeholder="@твой_аккаунт"></div>
         <div class="hp" aria-hidden="true"><label>Сайт <input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <label class="consent"><input type="checkbox" name="consent" required><span>Согласен(на) на обработку моих данных (имя, контакт, страна, аккаунт) командой UGC.camp, чтобы связаться со мной по заявке. Данные не передаём третьим лицам.</span></label>
-        <button class="btn" type="submit">Отправить заявку <span class="arr">→</span></button>
+        <label class="consent"><input type="checkbox" name="consent" required><span>Согласна(ен) на обработку моих данных (имя, почта, Telegram, страна) командой UGC.camp, чтобы дать доступ к челленджу и написать о нём. Данные не передаём третьим лицам, кроме платёжного сервиса.</span></label>
+        <button class="btn" type="submit"><span data-mode="checkout">Перейти к оплате · <span data-k="price">29 900 ₸</span></span><span data-mode="waitlist" hidden><span class="early-only">Закрепить раннюю цену</span><span class="late-only" hidden>Записаться</span></span> <span class="arr">→</span></button>
+        <p class="secure" data-mode="checkout">Без звонков и менеджеров. Возврат в первые 7 дней.</p>
         <p class="err" id="err" role="alert"></p>
       </form>
       <div class="thanks" id="thanks" role="status">
-        <div class="big">Заявка у нас!</div>
-        <p>Менеджер напишет тебе в Telegram или WhatsApp и предложит время для созвона.</p>
+        <div class="big">Ты в списке!</div>
+        <p>Пришлём ссылку на оплату на почту, как только откроем продажи. Ранняя цена остаётся за тобой.</p>
       </div>
     </div>
   </div>
@@ -664,20 +782,53 @@ footer{padding:56px 0 110px;color:var(--muted);font-size:14px}
 <footer>
   <div class="wrap foot">
     <a class="logo" href="#top">UGC<i>.camp</i></a>
-    <span>Акселератор UGC-креаторов · Казахстан · Узбекистан · онлайн</span>
+    <span>21-дневный UGC-челлендж · Казахстан · Узбекистан · онлайн</span>
     <span>© 2026 UGC.camp</span>
   </div>
 </footer>
 
-<div class="mcta" id="mcta"><a class="btn" href="#apply">Забронировать место <span class="arr">→</span></a></div>
+<div class="mcta" id="mcta"><a class="btn" href="#checkout"><span>Участвовать · <span data-k="price">29 900 ₸</span></span> <span class="arr">→</span></a></div>
 
 <script>
-// Настройки сайта: адрес приёма заявок и контакт для запасного варианта.
-window.UGC = { leadsUrl: "", contactUrl: "" };
+// Настройки челленджа. Цены, даты и ссылки меняются здесь.
+window.UGC = {
+  price: "29 900 ₸",          // цена сейчас (ранняя)
+  full: "49 900 ₸",           // цена после ранней
+  priceUZS: "≈ 790 000 сум",
+  fullUZS: "≈ 1,32 млн сум",
+  earlyUntil: "2026-11-30T23:59:00+05:00", earlyLabel: "30 ноября",
+  startLabel: "7 декабря", w1: "7 декабря", w2: "14 декабря", w3: "21 декабря",
+  checkoutUrl: "",            // ссылка на оплату (например, Stripe Payment Link). Пусто = режим листа ожидания
+  prefillEmail: true,         // добавлять ?prefilled_email= к ссылке оплаты (так умеет Stripe)
+  leadsUrl: ""                // адрес /apply воркера заявок
+};
 
 document.documentElement.classList.add('js');
 (function(){ var t=document.querySelector('.gal-track'); if(!t) return; Array.prototype.slice.call(t.children).forEach(function(c){ var k=c.cloneNode(true); k.setAttribute('aria-hidden','true'); k.removeAttribute('role'); k.querySelectorAll('img').forEach(function(i){i.alt='';}); t.appendChild(k); }); })();
 (function(){
+  var C = window.UGC, end = new Date(C.earlyUntil).getTime(), early = Date.now() < end;
+  if (!early) { C.price = C.full; C.priceUZS = C.fullUZS; }
+  document.querySelectorAll('[data-k]').forEach(function(el){ var v = C[el.getAttribute('data-k')]; if (v) el.textContent = v; });
+  document.querySelectorAll('.early-only').forEach(function(el){ el.hidden = !early; });
+  document.querySelectorAll('.late-only').forEach(function(el){ el.hidden = early; });
+
+  // режим: оплата открыта или лист ожидания
+  var mode = C.checkoutUrl ? 'checkout' : 'waitlist';
+  document.querySelectorAll('[data-mode]').forEach(function(el){ el.hidden = el.getAttribute('data-mode') !== mode; });
+  if (mode === 'waitlist' && !early) document.querySelector('#thanks p').textContent = 'Пришлём ссылку на оплату на почту, как только откроем продажи.';
+
+  // обратный отсчёт до конца ранней цены
+  var cds = document.querySelectorAll('[data-cd]');
+  function pad(n){ return (n<10?'0':'') + n; }
+  function tick(){
+    var s = Math.max(0, Math.floor((end - Date.now())/1000));
+    var d = Math.floor(s/86400), h = Math.floor(s%86400/3600), m = Math.floor(s%3600/60), x = s%60;
+    var t = (d ? d + ' д ' : '') + pad(h) + ':' + pad(m) + ':' + pad(x);
+    cds.forEach(function(el){ el.textContent = t; });
+    if (s === 0) { clearInterval(iv); location.reload(); }
+  }
+  var iv; if (early) { tick(); iv = setInterval(tick, 1000); }
+
   // плавное появление блоков
   var els = document.querySelectorAll('.rv');
   if ('IntersectionObserver' in window) {
@@ -686,12 +837,12 @@ document.documentElement.classList.add('js');
   } else { els.forEach(function(el){ el.classList.add('in'); }); }
 
   // мобильная кнопка: видна после первого экрана и прячется у формы
-  var m = document.getElementById('mcta'), hero = document.querySelector('.hero .cta'), apply = document.getElementById('apply');
-  var heroOut = false, applyIn = false;
-  function upd(){ m.classList.toggle('on', heroOut && !applyIn); }
+  var mc = document.getElementById('mcta'), hero = document.querySelector('.hero .cta'), box = document.getElementById('checkout');
+  var heroOut = false, boxIn = false;
+  function upd(){ mc.classList.toggle('on', heroOut && !boxIn); }
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function(es){ heroOut = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; upd(); }).observe(hero);
-    new IntersectionObserver(function(es){ applyIn = es[0].isIntersecting; upd(); }).observe(apply);
+    new IntersectionObserver(function(es){ boxIn = es[0].isIntersecting; upd(); }).observe(box);
   }
 
   // UTM-метки из ссылки
@@ -700,28 +851,40 @@ document.documentElement.classList.add('js');
 
   var f = document.getElementById('lead'), err = document.getElementById('err');
   function fail(t){ err.textContent = t; err.classList.add('on'); }
+  function toPay(email){
+    var u = C.checkoutUrl;
+    if (C.prefillEmail && email) u += (u.indexOf('?') < 0 ? '?' : '&') + 'prefilled_email=' + encodeURIComponent(email);
+    location.href = u;
+  }
   f.addEventListener('submit', function(ev){
     ev.preventDefault(); err.classList.remove('on');
     var d = Object.fromEntries(new FormData(f).entries());
     if (!d.name || !d.name.trim()) return fail('Напиши, как к тебе обращаться.');
-    if (!d.contact || d.contact.replace(/\D/g,'').length < 7 && !/^@?[a-zA-Z0-9_]{4,}$/.test(d.contact.trim())) return fail('Укажи Telegram (@username) или номер WhatsApp.');
+    if (!d.email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email.trim())) return fail('Проверь почту: на неё придёт доступ.');
+    if (d.contact && d.contact.trim() && !/^@?[a-zA-Z0-9_]{4,32}$/.test(d.contact.trim()) && d.contact.replace(/\D/g,'').length < 7) return fail('Telegram — в виде @username (или оставь поле пустым).');
     if (!d.country) return fail('Выбери страну.');
-    if (!f.consent.checked) return fail('Нужно согласие на обработку данных, чтобы мы могли связаться.');
+    if (!f.consent.checked) return fail('Нужно согласие на обработку данных.');
     if (d.website) return; // бот
-    d.utm = utm; d.page = location.href; d.ts = new Date().toISOString();
+    d.kind = mode; d.utm = utm; d.page = location.href; d.ts = new Date().toISOString();
     var btn = f.querySelector('button'); btn.disabled = true; btn.style.opacity = .6;
-    if (!window.UGC.leadsUrl) {
-      btn.disabled = false; btn.style.opacity = 1;
-      if (window.UGC.contactUrl) { location.href = window.UGC.contactUrl; return; }
-      return fail('Приём заявок подключается. Попробуй чуть позже.');
+    function done(){
+      if (mode === 'checkout') { if (window.fbq) fbq('track','InitiateCheckout'); toPay(d.email.trim()); return; }
+      f.style.display = 'none'; document.getElementById('thanks').classList.add('on');
+      if (window.fbq) fbq('track', 'Lead');
     }
-    fetch(window.UGC.leadsUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)})
+    if (!C.leadsUrl) {
+      if (mode === 'checkout') return done();
+      btn.disabled = false; btn.style.opacity = 1;
+      return fail('Запись подключается. Попробуй чуть позже.');
+    }
+    fetch(C.leadsUrl, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)})
       .then(function(r){ if(r.status===429) throw new Error('429'); if(!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function(){
-        f.style.display = 'none'; document.getElementById('thanks').classList.add('on');
-        if (window.fbq) fbq('track', 'Lead');
-      })
-      .catch(function(e){ btn.disabled = false; btn.style.opacity = 1; fail(e && e.message === '429' ? 'Заявки с этого устройства уже пришли — мы скоро свяжемся.' : 'Не получилось отправить. Проверь интернет и попробуй ещё раз.'); });
+      .then(done)
+      .catch(function(e){
+        if (mode === 'checkout') return done(); // оплата важнее записи
+        btn.disabled = false; btn.style.opacity = 1;
+        fail(e && e.message === '429' ? 'Ты уже в списке — мы напишем на почту.' : 'Не получилось отправить. Проверь интернет и попробуй ещё раз.');
+      });
   });
 })();
 </script>
